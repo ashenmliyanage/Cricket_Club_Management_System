@@ -7,6 +7,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
+import lk.ijse.BO.LoginBo;
+import lk.ijse.BO.impl.LoginBoImpl;
 import lk.ijse.Model.UserDto;
 import lk.ijse.dao.UserDao;
 import lk.ijse.dao.impl.UserDaoimpl;
@@ -68,7 +70,7 @@ public class SettingsFormController implements Initializable {
 
     public static boolean Success = true;
 
-    private String id = LoginFormController.Id;
+    private String id = LoginBoImpl.Id;
 
     public void updateBtnOnActhion(ActionEvent actionEvent) {
 

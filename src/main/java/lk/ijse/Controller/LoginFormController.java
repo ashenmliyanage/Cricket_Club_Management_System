@@ -5,10 +5,13 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Font;
+import lk.ijse.BO.LoginBo;
+import lk.ijse.BO.impl.LoginBoImpl;
 import lk.ijse.Model.UserDto;
 import lk.ijse.dao.MemberDao;
 import lk.ijse.dao.UserDao;
@@ -35,6 +38,8 @@ public class LoginFormController implements Initializable {
     @FXML
     private TextField watch;
 
+    LoginBo loginBo = new LoginBoImpl();
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         watch.setVisible(false);
@@ -56,39 +61,36 @@ public class LoginFormController implements Initializable {
     }
 
     public void loginOnActhion(ActionEvent actionEvent) throws IOException {
-        if (valid()){
-            Parent parent = FXMLLoader.load(this.getClass().getResource("/View/MainDashbordForm.fxml"));
-            this.ChangePane.getChildren().clear();
-            this.ChangePane.getChildren().add(parent);
-        }
-    }
-    public static String Id;
-    boolean valid(){
+
         try {
-            UserDao userDao = new UserDaoimpl();
-            UserDto login = userDao.Login(Username.getText());
-            if (Username.getText().equals(login.getUsername())){
-                this.Username.setStyle("-fx-border-color: rgba(0,0,0,0);-fx-border-radius: 38px;");
-                if (Password.getText().equals(login.getPassword())){
-                    Id = login.getUser_id();
-                    return true;
-                }
-                else {
+            String out = loginBo.login(Username.getText(),Password.getText());
+            switch (out){
+                case "Oky":
+                    Parent parent = FXMLLoader.load(this.getClass().getResource("/View/MainDashbordForm.fxml"));
+                    this.ChangePane.getChildren().clear();
+                    this.ChangePane.getChildren().add(parent);
+                    break;
+
+                case "Username":
+                    new Alert(Alert.AlertType.INFORMATION,"Username is not correct").show();
+                    this.Username.setStyle("-fx-border-color: red;-fx-border-radius: 38px;");
+                    break;
+
+                case "Pass":
+                    this.Username.setStyle("-fx-border-color: rgba(0,0,0,0);-fx-border-radius: 38px;");
                     Password.setStyle("-fx-border-color: red;-fx-border-radius: 38px;");
                     watch.setStyle("-fx-border-color: red;-fx-border-radius: 38px;");
-                }
-            }
-            else {
-                this.Username.setStyle("-fx-border-color: red;-fx-border-radius: 38px;");
+                    new Alert(Alert.AlertType.INFORMATION,"Password is not correct").show();
+                    break;
+
             }
         } catch (SQLException e) {
-            this.Username.setStyle("-fx-border-color: red;-fx-border-radius: 38px;");
-        } catch (Exception e) {
-            this.Username.setStyle("-fx-border-color: red;-fx-border-radius: 38px;");
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
-        return false;
-    }
 
+    }
     boolean flag = false;
     public void watchonActhion(MouseEvent mouseEvent) {
         String pass = Password.getText();
