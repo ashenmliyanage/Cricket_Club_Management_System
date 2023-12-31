@@ -19,6 +19,8 @@ import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import lk.ijse.BO.DashboardBo;
+import lk.ijse.BO.impl.DashboardBoImpl;
 import lk.ijse.Model.MemberDto;
 import lk.ijse.dao.MemberDao;
 import lk.ijse.dao.StockManageDao;
@@ -86,6 +88,8 @@ public class DashbordFormController implements Initializable {
 
     @FXML
     private Label Name6;
+
+    DashboardBo dashboardBo = new DashboardBoImpl();
 
 //    private void initializeImageSlideshow() {
 //
@@ -199,9 +203,9 @@ public class DashbordFormController implements Initializable {
     }
 
     public void getLastSixMembers() {
-        MemberDao dao = new MemberDaoImpl();
+
         try {
-            ArrayList<MemberDto> sixData = dao.getSixData();
+            ArrayList<MemberDto> sixData = dashboardBo.getSixData();
             Name1.setText(sixData.get(0).getFull_name());
             Name2.setText(sixData.get(1).getFull_name());
             Name3.setText(sixData.get(2).getFull_name());
@@ -241,8 +245,8 @@ public class DashbordFormController implements Initializable {
     private Label Wicket;
 
     void getItemCount() throws SQLException, ClassNotFoundException {
-        StockManageDao dao = new StockManageDaoimpl();
-        int[] itemCounts = dao.getItemCounts();
+
+        int[] itemCounts = dashboardBo.getCount();
         Bat.setText(String.valueOf(itemCounts[0]));
         Ball.setText(String.valueOf(itemCounts[1]));
         Wicket.setText(String.valueOf(itemCounts[2]));
