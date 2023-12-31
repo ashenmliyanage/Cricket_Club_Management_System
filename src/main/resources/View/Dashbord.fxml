@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="1016" prefWidth="1683" stylesheets="@../Dashboard.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.Controller.DashbordFormController">
+   <children>
+      <ImageView fitHeight="955.0" fitWidth="1683.0" layoutX="32.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true" styleClass="image">
+         <image>
+            <Image url="@../asstes/dashbord.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="lbldate" layoutX="820.0" layoutY="42.0" styleClass="date" />
+      <Label fx:id="lbldate2" layoutX="1290.0" layoutY="42.0" styleClass="date" />
+      <LineChart fx:id="Chart" layoutX="40.0" layoutY="173.0" prefHeight="451.0" prefWidth="680.0" styleClass="chart-series-line">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </LineChart>
+      <Label fx:id="Name1" layoutX="932.0" layoutY="249.0" prefHeight="29.0" prefWidth="199.0" styleClass="Names" text="Kusal Mendis " />
+      <Label fx:id="Name2" layoutX="932.0" layoutY="320.0" prefHeight="29.0" prefWidth="199.0" styleClass="Names" text="Kusal Mendis " />
+      <Label fx:id="Name3" layoutX="931.0" layoutY="391.0" prefHeight="29.0" prefWidth="199.0" styleClass="Names" text="Kusal Mendis " />
+      <Label fx:id="Name4" layoutX="931.0" layoutY="458.0" prefHeight="29.0" prefWidth="199.0" styleClass="Names" text="Kusal Mendis " />
+      <Label fx:id="Name5" layoutX="931.0" layoutY="529.0" prefHeight="29.0" prefWidth="199.0" styleClass="Names" text="Kusal Mendis " />
+      <Label fx:id="Name6" layoutX="931.0" layoutY="597.0" prefHeight="29.0" prefWidth="199.0" styleClass="Names" text="Kusal Mendis " />
+      <Label fx:id="Loc1" layoutX="933.0" layoutY="275.0" prefHeight="17.0" prefWidth="60.0" styleClass="Loc" text="Galle" />
+      <Label fx:id="Loc2" layoutX="933.0" layoutY="344.0" prefHeight="17.0" prefWidth="60.0" styleClass="Loc" text="Galle" />
+      <Label fx:id="Loc3" layoutX="933.0" layoutY="413.0" prefHeight="17.0" prefWidth="60.0" styleClass="Loc" text="Galle" />
+      <Label fx:id="Loc4" layoutX="932.0" layoutY="483.0" prefHeight="17.0" prefWidth="60.0" styleClass="Loc" text="Galle" />
+      <Label fx:id="Loc5" layoutX="932.0" layoutY="553.0" prefHeight="17.0" prefWidth="60.0" styleClass="Loc" text="Galle" />
+      <Label fx:id="Loc6" layoutX="932.0" layoutY="619.0" prefHeight="17.0" prefWidth="60.0" styleClass="Loc" text="Galle" />
+      <Label fx:id="Bat" layoutX="1368.0" layoutY="229.0" prefHeight="29.0" prefWidth="212.0" styleClass="bat" text="100" />
+      <Label fx:id="Ball" layoutX="1368.0" layoutY="345.0" prefHeight="29.0" prefWidth="212.0" styleClass="bat" text="100" />
+      <Label fx:id="Wicket" layoutX="1368.0" layoutY="463.0" prefHeight="29.0" prefWidth="212.0" styleClass="bat" text="100" />
+      <Label fx:id="Helmet" layoutX="1367.0" layoutY="582.0" prefHeight="29.0" prefWidth="212.0" styleClass="bat" text="100" />
+      <Label fx:id="Pad" layoutX="1367.0" layoutY="699.0" prefHeight="29.0" prefWidth="212.0" styleClass="bat" text="100" />
+      <Label fx:id="Gloves" layoutX="1367.0" layoutY="820.0" prefHeight="29.0" prefWidth="212.0" styleClass="bat" text="100" />
+      <ImageView fx:id="SLCricket" fitHeight="150.0" fitWidth="200.0" layoutX="113.0" layoutY="776.0" onMouseClicked="#webclick" onMouseEntered="#playMouseEnterAnimation" onMouseExited="#playMouseExitAnimation" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asstes/icon/srilanka.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Icc" fitHeight="150.0" fitWidth="200.0" layoutX="383.0" layoutY="779.0" onMouseClicked="#webclick" onMouseEntered="#playMouseEnterAnimation" onMouseExited="#playMouseExitAnimation" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asstes/icon/icc.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="GalleCricket" fitHeight="150.0" fitWidth="200.0" layoutX="633.0" layoutY="779.0" onMouseClicked="#webclick" onMouseEntered="#playMouseEnterAnimation" onMouseExited="#playMouseExitAnimation" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asstes/icon/galle.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="193.0" fitWidth="193.0" layoutX="892.0" layoutY="768.0" onMouseClicked="#webclick" onMouseEntered="#playMouseEnterAnimation" onMouseExited="#playMouseExitAnimation" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asstes/icon/my.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

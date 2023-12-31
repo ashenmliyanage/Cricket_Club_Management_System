@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="383" prefWidth="1501.0" stylesheets="@../MemberForm.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.TM.LoadMemberFormController">
+   <children>
+      <ImageView fitHeight="383.0" fitWidth="1534.0" layoutX="-1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asstes/Memberload.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="firstImage" fitHeight="275.0" fitWidth="275.0" layoutX="18.0" layoutY="15.0" onMouseClicked="#UpdatememberbtnOnActhion" onMouseEntered="#MouseEnterd" onMouseExited="#MouseExit" pickOnBounds="true" preserveRatio="true" styleClass="Photo" />
+      <ImageView fx:id="secondImage" fitHeight="275.0" fitWidth="275.0" layoutX="413.0" layoutY="14.0" onMouseClicked="#secountClick" onMouseEntered="#MouseEnterd" onMouseExited="#MouseExit" pickOnBounds="true" preserveRatio="true" styleClass="Photo" />
+      <ImageView fx:id="thirdImage" fitHeight="275.0" fitWidth="275.0" layoutX="813.0" layoutY="14.0" onMouseClicked="#TheirdClick" onMouseEntered="#MouseEnterd" onMouseExited="#MouseExit" pickOnBounds="true" preserveRatio="true" styleClass="Photo" />
+      <Label fx:id="fMembername" layoutX="4.0" layoutY="309.0" maxWidth="303.0" prefHeight="40.0" prefWidth="303.0" styleClass="Name" text="Kusal" />
+      <Label fx:id="sMemberName" layoutX="396.0" layoutY="315.0" maxWidth="303.0" prefHeight="40.0" prefWidth="303.0" styleClass="Name" />
+      <Label fx:id="tMemberName" layoutX="799.0" layoutY="316.0" maxWidth="304.0" prefHeight="40.0" prefWidth="304.0" styleClass="Name" />
+      <JFXButton fx:id="fDelete" layoutX="2.0" layoutY="343.0" onAction="#fDeleteOnActhion" prefHeight="34.0" prefWidth="305.0" styleClass="delete" text="Delete" />
+      <JFXButton fx:id="sDelete" layoutX="396.0" layoutY="348.0" onAction="#sDeleteonActhion" prefHeight="38.0" prefWidth="306.0" styleClass="delete" text="Delete" />
+      <JFXButton fx:id="tDelete" layoutX="798.0" layoutY="348.0" onAction="#tDeleteonActhion" prefHeight="38.0" prefWidth="306.0" styleClass="delete" text="Delete" />
+      <JFXButton fx:id="foDelete" layoutX="1211.0" layoutY="349.0" onAction="#foDeleteOnActhion" prefHeight="38.0" prefWidth="306.0" styleClass="delete" text="Delete" />
+      <Label fx:id="foMemberName" layoutX="1212.0" layoutY="315.0" maxWidth="304.0" prefHeight="40.0" prefWidth="304.0" styleClass="Name" />
+      <ImageView fx:id="fourthImage" fitHeight="275.0" fitWidth="275.0" layoutX="1227.0" layoutY="14.0" onMouseClicked="#fothClick" onMouseEntered="#MouseEnterd" onMouseExited="#MouseExit" pickOnBounds="true" preserveRatio="true" styleClass="Photo" />
+   </children>
+</AnchorPane>

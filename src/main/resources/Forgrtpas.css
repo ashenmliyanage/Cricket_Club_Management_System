@@ -1,0 +1,44 @@
+.btn{
+    -fx-background-radius: 30;
+    -fx-border-width: 1;
+    -fx-border-color: rgba(0, 0, 0, 0.20);
+    -fx-background-color: #1A4BCC;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.5), 0, 4, 4, 0 );
+    -fx-min-width: 586;
+    -fx-pref-width: 586;
+    -fx-max-width: 586;
+    -fx-min-height: 66;
+    -fx-pref-height: 66;
+    -fx-max-height: 66;
+    -fx-flex-shrink: 0;
+    -fx-text-fill: #FFFBF5;
+    -fx-font-family: "Roboto";
+    -fx-font-size: 29px;
+    -fx-font-style: normal;
+    -fx-font-weight: 700;
+    -fx-line-spacing: 0; /* Reset line spacing to normal */
+}
+.field{
+    -fx-background-color: rgba(0,0,0,0);
+    -fx-background-radius: 38px;
+    -fx-text-fill: #000;
+    -fx-font-family: "Roboto";
+    -fx-font-size: 30px;
+    -fx-font-style: normal;
+    -fx-font-weight: 400;
+    -fx-line-height: normal;
+    -fx-text-alignment: center;
+    -fx-min-width: 586;
+    -fx-pref-width: 585;
+    -fx-max-width: 585;
+    -fx-min-height: 64;
+    -fx-pref-height: 64;
+    -fx-max-height: 66;
+    -fx-flex-shrink: 0;
+}
+.field:hover{
+    -fx-background-color: #BAC9FF;
+    -fx-border-width: 1;
+    -fx-border-color: rgba(148, 203, 255, 0.55);
+    -fx-border-radius: 30;
+}

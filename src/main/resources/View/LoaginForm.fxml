@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="ChangePane" prefHeight="1080" prefWidth="1920" stylesheets="@../loginpage.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.Controller.LoginFormController">
+   <children>
+      <ImageView fitHeight="1085.0" fitWidth="1922.0" layoutX="1.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asstes/loginPage.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="Username" layoutX="156.0" layoutY="550.0" prefHeight="68.0" prefWidth="587.0" styleClass="field" />
+      <PasswordField fx:id="Password" layoutX="156.0" layoutY="690.0" prefHeight="66.0" prefWidth="587.0" styleClass="field" />
+      <JFXButton layoutX="155.0" layoutY="853.0" onAction="#loginOnActhion" styleClass="loginbtn" text="Login" />
+      <Label fx:id="createAcc" layoutX="466.0" layoutY="388.0" onMouseClicked="#createbtnOnActhion" prefHeight="80.0" prefWidth="429.0" styleClass="crerate" text="Create a new Account">
+         <font>
+            <Font size="38.0" />
+         </font>
+      </Label>
+      <Label layoutX="534.0" layoutY="767.0" onMouseClicked="#forgetbtnOnActhion" styleClass="forgrt" text="Forget Password" />
+      <TextField fx:id="watch" layoutX="156.0" layoutY="689.0" prefHeight="68.0" prefWidth="587.0" styleClass="field" />
+      <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="675.0" layoutY="705.0" onMouseClicked="#watchonActhion" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asstes/Eye.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

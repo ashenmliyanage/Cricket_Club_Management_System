@@ -1,0 +1,112 @@
+package lk.ijse.Controller;
+
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Font;
+import lk.ijse.Model.UserDto;
+import lk.ijse.dao.MemberDao;
+import lk.ijse.dao.UserDao;
+import lk.ijse.dao.impl.MemberDaoImpl;
+import lk.ijse.dao.impl.UserDaoimpl;
+import javafx.scene.control.TextField;
+
+import java.awt.*;
+import java.io.IOException;
+import java.net.URL;
+import java.sql.SQLException;
+import java.util.ResourceBundle;
+import javafx.scene.control.PasswordField;
+
+public class LoginFormController implements Initializable {
+//Main pass - Cricket@2023
+    public Label createAcc;
+    public AnchorPane ChangePane;
+    @FXML
+    private PasswordField Password;
+
+    @FXML
+    private TextField Username;
+    @FXML
+    private TextField watch;
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        watch.setVisible(false);
+        Font.loadFont(getClass().getResourceAsStream("/front/AnonymousPro-Bold.ttf"),14);
+        Font.loadFont(getClass().getResourceAsStream("/front/Roboto-Regular.ttf"),14);
+        Font.loadFont(getClass().getResourceAsStream("/front/Roboto-Bold.ttf"),14);
+    }
+
+    public void createbtnOnActhion(MouseEvent mouseEvent) throws IOException {
+        Parent parent = FXMLLoader.load(this.getClass().getResource("/View/CreateAccountForm.fxml"));
+        this.ChangePane.getChildren().clear();
+        this.ChangePane.getChildren().add(parent);
+    }
+
+    public void forgetbtnOnActhion(MouseEvent mouseEvent) throws IOException {
+        Parent parent = FXMLLoader.load(this.getClass().getResource("/View/ForgetPassword.fxml"));
+        this.ChangePane.getChildren().clear();
+        this.ChangePane.getChildren().add(parent);
+    }
+
+    public void loginOnActhion(ActionEvent actionEvent) throws IOException {
+        if (valid()){
+            Parent parent = FXMLLoader.load(this.getClass().getResource("/View/MainDashbordForm.fxml"));
+            this.ChangePane.getChildren().clear();
+            this.ChangePane.getChildren().add(parent);
+        }
+    }
+    public static String Id;
+    boolean valid(){
+        try {
+            UserDao userDao = new UserDaoimpl();
+            UserDto login = userDao.Login(Username.getText());
+            if (Username.getText().equals(login.getUsername())){
+                this.Username.setStyle("-fx-border-color: rgba(0,0,0,0);-fx-border-radius: 38px;");
+                if (Password.getText().equals(login.getPassword())){
+                    Id = login.getUser_id();
+                    return true;
+                }
+                else {
+                    Password.setStyle("-fx-border-color: red;-fx-border-radius: 38px;");
+                    watch.setStyle("-fx-border-color: red;-fx-border-radius: 38px;");
+                }
+            }
+            else {
+                this.Username.setStyle("-fx-border-color: red;-fx-border-radius: 38px;");
+            }
+        } catch (SQLException e) {
+            this.Username.setStyle("-fx-border-color: red;-fx-border-radius: 38px;");
+        } catch (Exception e) {
+            this.Username.setStyle("-fx-border-color: red;-fx-border-radius: 38px;");
+        }
+        return false;
+    }
+
+    boolean flag = false;
+    public void watchonActhion(MouseEvent mouseEvent) {
+        String pass = Password.getText();
+
+        if (!flag){
+            Password.setVisible(false);
+            watch.setVisible(true);
+            watch.setText(pass);
+            flag = true;
+            System.out.println(true);
+            return;
+        }
+        if (flag){
+            Password.setVisible(true);
+            watch.setVisible(false);
+            flag = false;
+            System.out.println(false);
+        }
+
+    }
+}

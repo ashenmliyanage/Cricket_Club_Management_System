@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="ChangePane" prefHeight="1080" prefWidth="1920" stylesheets="@../CreateAcount.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.Controller.CreateAccountFormController">
+   <children>
+      <ImageView fitHeight="1365.0" fitWidth="1924.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asstes/createAcc.png" />
+         </image>
+      </ImageView>
+      <JFXButton layoutX="622.0" layoutY="798.0" onAction="#createbtnOnActhion" styleClass="create" text="Create a new account" />
+      <TextField fx:id="UserName" layoutX="158.0" layoutY="431.0" styleClass="field" stylesheets="@../loginpage.css" />
+      <TextField fx:id="Email" layoutX="158.0" layoutY="587.0" styleClass="field" />
+      <PasswordField fx:id="Password" layoutX="940.0" layoutY="431.0" styleClass="field" />
+      <PasswordField fx:id="ConPass" layoutX="939.0" layoutY="588.0" styleClass="field" />
+      <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="1473.0" layoutY="447.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asstes/Eye.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="1478.0" layoutY="603.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asstes/Eye.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

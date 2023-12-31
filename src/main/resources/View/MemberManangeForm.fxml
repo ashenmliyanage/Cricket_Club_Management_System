@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="1016" prefWidth="1683" stylesheets="@../MemberForm.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.Controller.MemberManangeFormController">
+   <children>
+      <ScrollPane fx:id="scrollPane" layoutX="81.0" layoutY="162.0" prefHeight="823.0" prefWidth="1542.0">
+         <content>
+            <VBox fx:id="vBox" prefHeight="821.0" prefWidth="1501.0" styleClass="scroll-pane" />
+         </content>
+      </ScrollPane>
+      <ImageView fitHeight="100.0" fitWidth="1574.0" layoutX="64.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asstes/Rectangle%2044.png" />
+         </image>
+      </ImageView>
+      <JFXButton layoutX="1356.0" layoutY="40.0" onAction="#addbtnOnActhion" styleClass="addbtn" text="Button">
+         <graphic>
+            <ImageView fitHeight="37.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true" translateX="-29.0">
+               <image>
+                  <Image url="@../asstes/icon/🦆%20icon%20_plus%20circle_.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <ImageView fitHeight="57.0" fitWidth="648.0" layoutX="509.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asstes/Group%2075.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="search" layoutX="552.0" layoutY="42.0" onAction="#searchOnActhion" promptText="search here" styleClass="search" />
+      <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="520.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asstes/Search.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="117.0" fitWidth="361.0" layoutX="90.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asstes/Members.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="Count" layoutX="198.0" layoutY="59.0" prefHeight="52.0" prefWidth="213.0" style="-fx-font-size: 30px; -fx-font-family: 'Roboto'; -fx-font-weight: 500;" text="Label" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="751.66" prefWidth="1336.28" styleClass="Pane" stylesheets="@../MemberForm.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.Controller.AddmemberFormController">
+   <children>
+      <ImageView fitHeight="755.0" fitWidth="1343.0" layoutX="-1.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true" styleClass="Pane">
+         <image>
+            <Image url="@../asstes/Savemember.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="image" fitHeight="275.0" fitWidth="275.0" layoutX="140.0" layoutY="124.0" pickOnBounds="true" preserveRatio="true" />
+      <JFXButton layoutX="119.0" layoutY="415.0" onAction="#importImage" prefWidth="306.0" styleClass="import_btn" text="Import Image" />
+      <JFXButton layoutX="750.0" layoutY="614.0" onAction="#SavebtnOnActhion" prefWidth="306.0" styleClass="save_btn" text="Save" />
+      <TextField fx:id="FullName" layoutX="542.0" layoutY="259.0" onAction="#NamebtnOnActhion" prefWidth="352.0" styleClass="text" />
+      <TextField fx:id="Age" layoutX="916.0" layoutY="368.0" prefWidth="352.0" styleClass="text" />
+      <TextField fx:id="Email" layoutX="542.0" layoutY="476.0" prefWidth="352.0" styleClass="text" />
+      <TextField fx:id="Address" layoutX="916.0" layoutY="475.0" prefWidth="352.0" styleClass="text" />
+      <Button layoutX="1217.0" layoutY="25.0" mnemonicParsing="false" onAction="#backbtnOnActhion" opacity="0.0" prefHeight="74.0" prefWidth="72.0" text="Button" />
+      <Label fx:id="label" layoutX="87.0" layoutY="68.0" prefHeight="46.0" prefWidth="392.0" styleClass="lable" text="Enter Name" />
+      <ComboBox fx:id="Position" layoutX="915.0" layoutY="259.0" prefWidth="352.0" styleClass="text" />
+      <DatePicker fx:id="Birthday" layoutX="542.0" layoutY="369.0" prefWidth="352.0" styleClass="date-picker" stylesheets="@../DatePicker.css" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="1016" prefWidth="1683" stylesheets="@../StockFrom.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.Controller.StockMaageFormController">
+   <children>
+      <ImageView fitHeight="1081.0" fitWidth="1684.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asstes/stockManage.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="itemCode" layoutX="785.0" layoutY="228.0" styleClass="Labales" />
+      <ComboBox fx:id="cmdType" layoutX="1236.0" layoutY="228.0" prefWidth="150.0" styleClass="Labales" />
+      <DatePicker fx:id="Date" layoutX="785.0" layoutY="369.0" minHeight="46.0" minWidth="280.0" prefHeight="53.0" prefWidth="292.0" styleClass="Labales" stylesheets="@../DatePicker.css" />
+      <ComboBox fx:id="cmdDomain" layoutX="1236.0" layoutY="369.0" onAction="#domainonActhion" prefWidth="150.0" styleClass="Labales" />
+      <TextField fx:id="DomainName" layoutX="785.0" layoutY="507.0" styleClass="Labales" />
+      <ComboBox fx:id="cmdMemeber" layoutX="1236.0" layoutY="507.0" prefWidth="150.0" styleClass="Labales" />
+      <TextField fx:id="Count" layoutX="786.0" layoutY="643.0" styleClass="Labales" />
+      <JFXButton fx:id="Savebtn" layoutX="1239.0" layoutY="644.0" onAction="#savebtnOnActhion" styleClass="Save" text="Save" />
+      <TableView fx:id="Table" layoutX="50.0" layoutY="141.0" prefHeight="816.0" prefWidth="540.0">
+        <columns>
+          <TableColumn fx:id="itemCol" prefWidth="171.0" text="Item Code" />
+          <TableColumn fx:id="TypeCol" minWidth="0.0" prefWidth="194.0" text="Type" />
+            <TableColumn fx:id="CountCol" minWidth="0.0" prefWidth="174.0" text="Count" />
+        </columns>
+      </TableView>
+      <TextField fx:id="search" layoutX="90.0" layoutY="60.0" onAction="#searchOnActhion" prefHeight="53.0" prefWidth="426.0" styleClass="search" />
+   </children>
+</AnchorPane>

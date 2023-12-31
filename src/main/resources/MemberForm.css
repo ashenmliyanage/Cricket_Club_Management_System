@@ -1,0 +1,184 @@
+.Photo{
+    -fx-fit-width: 275; /* Set the desired width */
+    -fx-fit-height: 275;
+}
+.Name{
+    -fx-min-width: 209px;
+    -fx-min-height: 40px;
+    -fx-max-height: 40px;
+    -fx-flex-shrink: 0;
+    -fx-text-fill: #000;
+    -fx-font-family: 'Roboto';
+    -fx-font-size: 19px;
+    -fx-font-style: normal;
+    -fx-font-weight: 500;
+    -fx-line-height: normal;
+    -fx-alignment: center;
+}
+
+.scroll-pane .viewport {
+    -fx-background-color: transparent;
+}
+
+.bar{
+    -fx-min-width: 1501px;
+    -fx-max-width: 1501px;
+    -fx-min-height: 77px;
+    -fx-max-height: 77px;
+    -fx-flex-shrink: 0;
+    -fx-border-radius: 15px;
+    -fx-background-color: rgba(255, 255, 255, 0.36);
+    -fx-effect: innershadow(gaussian, rgba(0, 0, 0, 0.25), 1, 1, 0, 0);
+    -fx-background-radius: 15px;
+}
+
+.addbtn{
+    -fx-min-width: 242px;
+    -fx-max-width: 242px;
+    -fx-min-height: 60px;
+    -fx-max-height: 60px;
+    -fx-flex-shrink: 0;
+    -fx-border-radius: 11px;
+    -fx-border-width: 2px;
+    -fx-border-color: #1A4BCC;
+    -fx-background-color: #E2EBFD;
+    -fx-text-fill: #1A4BCC;
+    -fx-font-family: 'Roboto';
+    -fx-font-size: 20px;
+    -fx-font-style: normal;
+    -fx-font-weight: 500;
+    -fx-line-height: normal;
+    -fx-background-radius: 13px;
+}
+.addbtn:hover{
+    -fx-border-radius: 11px;
+    -fx-border-width: 2px;
+    -fx-border-color: #E2EBFD;
+    -fx-background-radius: 11px;
+    -fx-background-color: #3C71FF;
+    -fx-text-fill: #E2EBFD;
+    -fx-font-family: 'Roboto';
+    -fx-font-size: 20px;
+    -fx-font-style: normal;
+    -fx-font-weight: 500;
+    -fx-line-height: normal;
+    -fx-min-width: 242px;
+    -fx-max-width: 242px;
+    -fx-min-height: 60px;
+    -fx-max-height: 60px;
+    -fx-flex-shrink: 0;
+}
+.search{
+    -fx-min-width: 535px;
+    -fx-max-width: 535px;
+    -fx-min-height: 52px;
+    -fx-max-height: 52px;
+    -fx-flex-shrink: 0;
+    -fx-border-radius: 15px;
+    -fx-background-color: rgba(0,0,0,0);
+    -fx-text-fill: #000;
+    -fx-font-family: 'Roboto';
+    -fx-font-size: 25px;
+    -fx-font-style: normal;
+    -fx-font-weight: 400;
+    -fx-line-height: normal;
+}
+
+.import_btn{
+    -fx-pref-height: 49px;
+    -fx-shape: "M0 30 Q0 0 30 0 L274 0 Q304 0 304 30 L304 19 Q304 49 274 49 L30 49 Q0 49 0 30 Z";
+    -fx-background-radius: 30px;
+    -fx-border-radius: 30px;
+    -fx-border-width: 1px;
+    -fx-border-color: rgba(0, 0, 0, 0.20);
+    -fx-background-color: #1A4BCC;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.50), 4, 0, 0, 4);
+    -fx-text-fill: #FFF;
+    -fx-font-family: "Roboto";
+    -fx-font-size: 22px;
+    -fx-font-style: normal;
+    -fx-font-weight: 500;
+    -fx-alignment: center;
+    -fx-content-display: center;
+}
+.import_btn:hover{
+    -fx-background-color: #4C79EE;
+}
+
+.save_btn{
+    -fx-pref-height: 49px;
+    -fx-border-radius: 14px;
+    -fx-background-radius: 14px;
+    -fx-border-width: 1px;
+    -fx-border-color: rgba(0, 0, 0, 0.20);
+    -fx-background-color: #1A4BCC;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.50), 0, 4, 0, 0);
+    -fx-text-fill: #FFF;
+    -fx-font-family: "Roboto";
+    -fx-font-size: 22px;
+    -fx-font-style: normal;
+    -fx-font-weight: 500;
+    -fx-alignment: center;
+    -fx-content-display: center;
+}
+
+.save_btn:hover{
+    -fx-background-color: #4C79EE;
+}
+
+.text{
+    -fx-pref-height: 46px;
+    -fx-border-radius: 12px;
+    -fx-border-width: 1px;
+    -fx-border-color: #BBB;
+    -fx-background-color: rgba(255, 255, 255, 0.00);
+    -fx-alignment: center;
+    -fx-content-display: center;
+    -fx-text-fill: #494949;
+    -fx-text-alignment: center;
+    -fx-font-family: "Roboto";
+    -fx-font-size: 17px;
+    -fx-font-style: normal;
+    -fx-font-weight: 700;
+}
+.Pane{
+    -fx-background-radius: 42px;
+    -fx-border-radius: 42px;
+}
+
+.text:hover{
+    -fx-background-color: rgba(255, 255, 255, 0.46);
+    -fx-background-radius: 12px;
+}
+.delete{
+    -fx-pref-height: 27px;
+    -fx-flex-shrink: 0;
+    -fx-background-color: #FF3535;
+    -fx-background-radius: 0 0 30 30;
+    -fx-text-fill: #FFF;
+    -fx-font-family: "Roboto";
+    -fx-font-size: 15px;
+    -fx-font-style: normal;
+    -fx-font-weight: 500;
+    -fx-line-height: normal;
+}
+.count{
+    -fx-text-fill: #000;
+    -fx-font-family: "Roboto";
+    -fx-font-size: 37px;
+    -fx-font-style: normal;
+    -fx-font-weight: 500;
+    -fx-line-height: normal;
+    -fx-pref-width: 97px;
+    -fx-pref-height: 23.883px;
+    -fx-flex-shrink: 0;
+}
+.lable{
+    -fx-text-fill: #000000;
+    -fx-font-family: "Roboto";
+    -fx-font-size: 25px;
+    -fx-font-style: normal;
+    -fx-font-weight: bold;
+    -fx-line-height: 1.0; /* Use an appropriate value for your specific case */
+    -fx-alignment: center;
+}

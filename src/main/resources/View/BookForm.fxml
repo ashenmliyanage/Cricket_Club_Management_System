@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="1016" prefWidth="1683" stylesheets="@../bookform.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.Controller.BookFormController">
+   <children>
+      <TableView fx:id="table" layoutX="101.0" layoutY="530.0" prefHeight="465.0" prefWidth="1087.0" stylesheets="@../tableViewStyle.css">
+         <columns>
+            <TableColumn fx:id="ItemCodeCol" prefWidth="231.0" text="Item Code" />
+            <TableColumn fx:id="itemCol" prefWidth="283.0" text="Type" />
+            <TableColumn fx:id="CountCol" prefWidth="302.0" text="Count" />
+            <TableColumn fx:id="DeleteCol" prefWidth="269.0" text="Delete" />
+         </columns>
+      </TableView>
+      <Label fx:id="Member_Id" layoutX="127.0" layoutY="134.0" maxWidth="458.0" prefHeight="76.0" prefWidth="458.0" styleClass="fild" text="Find Id" />
+      <TextField fx:id="MemberName" layoutX="748.0" layoutY="134.0" onAction="#MemberNameOnActhion" prefHeight="76.0" prefWidth="646.0" styleClass="fild" />
+      <ComboBox fx:id="ItemCmb" layoutX="127.0" layoutY="286.0" onAction="#itemcbmOnActhion" prefHeight="76.0" prefWidth="457.0" styleClass="fild" />
+      <Label fx:id="Type" layoutX="748.0" layoutY="286.0" maxWidth="458.0" prefHeight="76.0" prefWidth="458.0" styleClass="fild" text="Type" />
+      <Label fx:id="QtyOnHand" layoutX="1271.0" layoutY="288.0" maxWidth="458.0" minWidth="327.0" prefHeight="76.0" prefWidth="336.0" styleClass="fild" text="Count" />
+      <JFXButton layoutX="1313.0" layoutY="420.0" onAction="#AddbtnOnActhion" styleClass="addbtn" text="Add" />
+      <JFXButton fx:id="getItem" layoutX="1338.0" layoutY="866.0" onAction="#getitemOnActhion" styleClass="get" text="Get Item" />
+      <TextField fx:id="Count" layoutX="748.0" layoutY="408.0" prefHeight="76.0" prefWidth="458.0" styleClass="fild" />
+   </children>
+</AnchorPane>

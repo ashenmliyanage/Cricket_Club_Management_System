@@ -1,0 +1,36 @@
+.date-picker {
+ /* Adjust the value for the desired curvature */
+    -fx-border-radius: 12px;
+    -fx-background-radius: 12; /* Adjust the value for the desired curvature */
+    -fx-pref-height: 46px;
+    -fx-background-color: #FFFF;
+    -fx-border-width: 1px;
+    -fx-border-color: #BBB;
+    -fx-alignment: center;
+    -fx-content-display: center;
+    -fx-text-fill: #494949;
+    -fx-text-alignment: center;
+    -fx-font-family: "Roboto";
+    -fx-font-size: 17px;
+    -fx-font-style: normal;
+    -fx-font-weight: 700;
+}
+
+.date-picker .arrow-button {
+    -fx-shape: "M 0 0 L 10 5 L 0 10 Z";
+    -fx-background-color: rgba(255, 255, 255, 0.00)/* Custom arrow shape, adjust as needed */
+}
+
+.date-picker .arrow-button:hover {
+    -fx-background-color: #E0E0E0; /* Adjust the hover background color as needed */
+}
+
+.date-picker .text-field {
+    -fx-background-color: #FFFFFF; /* Text field background color */
+    -fx-background-radius: 10; /* Adjust the value for the desired curvature */
+    -fx-border-radius: 10; /* Adjust the value for the desired curvature */
+}
+
+.date-picker .arrow-button:pressed, .date-picker .text-field:focused {
+    -fx-background-color: #D0D0D0; /* Adjust the pressed/focused background color */
+}

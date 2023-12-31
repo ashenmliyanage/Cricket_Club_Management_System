@@ -1,0 +1,53 @@
+.image{
+    -fx-min-width: 698;
+    -fx-pref-width: 698;
+    -fx-max-width: 698;
+    -fx-min-height: 465;
+    -fx-pref-height: 465;
+    -fx-max-height: 465;
+    -fx-flex-shrink: 0;
+    -fx-background-radius: 40px;
+    -fx-border-radius: 40px;
+}
+.date{
+    -fx-text-fill: #2B2B2B;
+    -fx-font-family: 'Roboto';
+    -fx-font-size: 38px;
+    -fx-font-style: normal;
+    -fx-font-weight: Bold;
+    -fx-line-spacing: 0; /* or -fx-line-height: normal; */
+    -fx-max-width: 223px;
+    -fx-pref-width: 223px;
+    -fx-min-width: 223px;
+}
+
+.chart-series-line {
+    -fx-stroke: rgba(0, 148, 232, 0.66);
+}
+.chart-series-line:hover {
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.3), 10, 0, 0, 0);
+}
+.Names{
+    -fx-text-fill: #000;
+    -fx-font-family: 'Roboto';
+    -fx-font-size: 17px;
+    -fx-font-style: normal;
+    -fx-font-weight: 500;
+    -fx-line-height: normal;
+}
+.Loc{
+    -fx-text-fill: #5F5F5F;
+    -fx-font-family: 'Roboto';
+    -fx-font-size: 13px;
+    -fx-font-style: normal;
+    -fx-font-weight: 500;
+    -fx-line-height: normal;
+}
+.bat{
+    -fx-text-fill: #000;
+    -fx-font-family: 'Roboto';
+    -fx-font-size: 30px;
+    -fx-font-style: normal;
+    -fx-font-weight: 700;
+    -fx-line-height: normal;
+}
