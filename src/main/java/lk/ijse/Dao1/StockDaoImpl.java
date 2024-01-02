@@ -1,11 +1,13 @@
 package lk.ijse.Dao1;
 
+import lk.ijse.TM.bookTm;
 import lk.ijse.entity.Stock;
 import lk.ijse.util.SQLUtil;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class StockDaoImpl implements StockDao{
     @Override
@@ -66,7 +68,12 @@ public class StockDaoImpl implements StockDao{
         System.out.println(dto);
         return dto;
     }
+    @Override
+    public boolean update(int count, int qty, String itemCode) throws SQLException, ClassNotFoundException {
+        return SQLUtil.execute("UPDATE stock SET Count = ? WHERE code = ?",(qty-count),itemCode);
+    }
 
-
-
+    private boolean updateQty(bookTm cartTm) throws SQLException, ClassNotFoundException {
+        return SQLUtil.execute("UPDATE stock set Count = ? WHERE code = ?",cartTm.getCount(),cartTm.getItemCode());
+    }
 }

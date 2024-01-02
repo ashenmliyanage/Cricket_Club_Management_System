@@ -2,6 +2,7 @@ package lk.ijse.dao.impl;
 
 import lk.ijse.Model.OrderDto;
 import lk.ijse.dao.OrderDao;
+import lk.ijse.entity.Order;
 import lk.ijse.util.SQLUtil;
 
 import java.sql.SQLException;
@@ -20,7 +21,7 @@ public class OrderDaoImpl implements OrderDao {
 
     @Override
     public boolean Save(OrderDto dto) throws SQLException, ClassNotFoundException {
-        return SQLUtil.execute("INSERT INTO orders VALUES(?,?,?,?)", dto.getBook_id(), dto.getMember_id(), dto.getDate(), dto.getCount());
+        return false;
     }
 
     @Override
@@ -35,6 +36,11 @@ public class OrderDaoImpl implements OrderDao {
 
     @Override
     public boolean Delete(String name) throws SQLException, ClassNotFoundException {
+        return false;
+    }
+
+    @Override
+    public boolean Save(Order dto) throws SQLException, ClassNotFoundException {
         return false;
     }
 }

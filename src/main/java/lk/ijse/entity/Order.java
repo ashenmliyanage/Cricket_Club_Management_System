@@ -1,4 +1,4 @@
-package lk.ijse.Model;
+package lk.ijse.entity;
 
 import lk.ijse.TM.bookTm;
 import lombok.AllArgsConstructor;
@@ -11,11 +11,10 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class BookDto{
+public class Order {
     private String book_id;
     private String Member_Id;
     private String LocalDate;
-    private double Count;
     private int qty;
     private List<bookTm> tmList = new ArrayList<>();
 }

@@ -9,16 +9,17 @@ import javafx.fxml.Initializable;
 import javafx.scene.Cursor;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import lk.ijse.BO.BookBo;
+import lk.ijse.BO.MemberBo;
+import lk.ijse.BO.StockManageBo;
+import lk.ijse.BO.impl.BookBoImpl;
+import lk.ijse.BO.impl.MemberBoImpl;
+import lk.ijse.BO.impl.StockManageBoImpl;
 import lk.ijse.Model.BookDto;
 import lk.ijse.Model.MemberDto;
+import lk.ijse.Model.OrderDto;
 import lk.ijse.Model.StockDto;
 import lk.ijse.TM.bookTm;
-import lk.ijse.dao.BookDao;
-import lk.ijse.dao.MemberDao;
-import lk.ijse.dao.StockManageDao;
-import lk.ijse.dao.impl.BookDaoimpl;
-import lk.ijse.dao.impl.MemberDaoImpl;
-import lk.ijse.dao.impl.StockManageDaoimpl;
 
 import java.net.URL;
 import java.sql.SQLException;
@@ -54,6 +55,10 @@ public class BookFormController implements Initializable {
     private TableView<bookTm> table;
 
     private final ObservableList<bookTm> obList = FXCollections.observableArrayList();
+
+    MemberBo memberDao = new MemberBoImpl();
+    StockManageBo stockManageDao = new StockManageBoImpl();
+    BookBo bookDao = new BookBoImpl();
     @FXML
     void AddbtnOnActhion(ActionEvent event) {
 
@@ -88,6 +93,7 @@ public class BookFormController implements Initializable {
                             ItemCode,
                             Type.getText(),
                             Count.getText(),
+                            gtyOnHand,
                             btn
                     ));
 
@@ -124,7 +130,7 @@ public class BookFormController implements Initializable {
 
     @FXML
     void MemberNameOnActhion(ActionEvent event) throws SQLException, ClassNotFoundException {
-        MemberDao memberDao = new MemberDaoImpl();
+
         MemberDto data = memberDao.getData(MemberName.getText());
 
         try {
@@ -139,7 +145,6 @@ public class BookFormController implements Initializable {
     @FXML
     void getitemOnActhion(ActionEvent event) {
 
-        String orderId = generateNextOrderId();
         String cusId = Member_Id.getText();
         String date = setDate();
         int qty = Integer.parseInt(this.QtyOnHand.getText());
@@ -150,17 +155,15 @@ public class BookFormController implements Initializable {
             tmList.add(cartTm);
         }
 
-        BookDto bookDto = new BookDto(
-                orderId,
+        OrderDto bookDto = new OrderDto(
+                null,
                 cusId,
                 date,
-                count,
                 qty,
                 tmList
         );
 
         try {
-            BookDao bookDao = new BookDaoimpl();
             boolean isSuccess = bookDao.Save(bookDto);
             if(isSuccess) {
                 new Alert(Alert.AlertType.CONFIRMATION, "order completed!").show();
@@ -174,7 +177,7 @@ public class BookFormController implements Initializable {
     }
 
     public void itemcbmOnActhion(ActionEvent actionEvent) {
-        StockManageDao stockManageDao = new StockManageDaoimpl();
+
         try {
             StockDto data = stockManageDao.getData(this.ItemCmb.getValue());
             Type.setText(data.getType());
@@ -193,20 +196,10 @@ public class BookFormController implements Initializable {
         ItemCodeCol.setCellValueFactory(new PropertyValueFactory<>("ItemCode"));
         loadItemCodes();
     }
-    private String generateNextOrderId() {
-        BookDao bookDao = new BookDaoimpl();
-        try {
-            return bookDao.generateId("Book_id","orders","B");
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-    }
+
 
     private void loadItemCodes() {
         ObservableList<String> obList = FXCollections.observableArrayList();
-        StockManageDao stockManageDao = new StockManageDaoimpl();
         try {
             List<StockDto> itemList = stockManageDao.getAll();
 
