@@ -8,6 +8,10 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.text.Font;
+import lk.ijse.BO.MemberBo;
+import lk.ijse.BO.StockManageBo;
+import lk.ijse.BO.impl.MemberBoImpl;
+import lk.ijse.BO.impl.StockManageBoImpl;
 import lk.ijse.Model.MemberDto;
 import lk.ijse.Model.StockDto;
 import lk.ijse.TM.StockTM;
@@ -62,8 +66,8 @@ public class StockMaageFormController {
     private JFXButton Savebtn;
 
 
-    StockManageDao stockManageDao = new StockManageDaoimpl();
-
+    StockManageBo stockManageDao = new StockManageBoImpl();
+    MemberBo memberDao = new MemberBoImpl();
     public void initialize() throws IOException {
         Font.loadFont(getClass().getResourceAsStream("/front/"), 14);
         Table.setStyle("-fx-background-color: rgba(147, 236, 249, 0.25);");
@@ -170,7 +174,8 @@ public class StockMaageFormController {
         cmdDomain.setItems(items);
 
         items = FXCollections.observableArrayList();
-        MemberDao memberDao = new MemberDaoImpl();
+
+
         try {
             ArrayList<MemberDto> list = memberDao.getAll();
             System.out.println(list);
