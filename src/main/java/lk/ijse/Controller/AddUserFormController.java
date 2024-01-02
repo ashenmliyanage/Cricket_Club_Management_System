@@ -8,6 +8,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
+import lk.ijse.BO.SettingBo;
+import lk.ijse.BO.impl.SettingBoImpl;
 import lk.ijse.Model.UserDto;
 import lk.ijse.dao.UserDao;
 import lk.ijse.dao.impl.UserDaoimpl;
@@ -45,6 +47,7 @@ public class AddUserFormController {
     @FXML
     private TextField username;
 
+    SettingBo userDao = new SettingBoImpl();
     @FXML
     void NamebtnOnActhion(ActionEvent event) {
         label.setText(name.getText());
@@ -52,10 +55,9 @@ public class AddUserFormController {
 
     @FXML
     void SavebtnOnActhion(ActionEvent event) {
-        UserDao userDao = new UserDaoimpl();
         int Age = Integer.parseInt(this.Age.getText());
         try {
-            String Id = userDao.generateId("User_Id", "User", "U0");
+            String Id = userDao.generateId("User_Id", "user", "U0");
             boolean save = userDao.Save(new UserDto(Id, name.getText(), Address.getText(), Age, this.Email.getText(), username.getText(), password.getText(), inputStream));
 
             if (save){

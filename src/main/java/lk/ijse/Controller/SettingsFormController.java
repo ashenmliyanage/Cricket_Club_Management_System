@@ -8,9 +8,11 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
 import lk.ijse.BO.LoginBo;
+import lk.ijse.BO.SettingBo;
 import lk.ijse.BO.impl.LoginBoImpl;
+import lk.ijse.BO.impl.SettingBoImpl;
+import lk.ijse.Dao1.UserDao;
 import lk.ijse.Model.UserDto;
-import lk.ijse.dao.UserDao;
 import lk.ijse.dao.impl.UserDaoimpl;
 import lk.ijse.util.ImageAutoCrop;
 import lk.ijse.util.PopUPForm;
@@ -26,7 +28,7 @@ import java.util.ResourceBundle;
 
 public class SettingsFormController implements Initializable {
 
-    UserDao userDao = new UserDaoimpl();
+    SettingBo userDao = new SettingBoImpl();
 
     public ImageView image;
     public TextField N_userName;
