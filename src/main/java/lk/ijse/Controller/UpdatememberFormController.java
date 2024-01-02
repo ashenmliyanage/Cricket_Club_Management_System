@@ -16,6 +16,8 @@ import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import lk.ijse.BO.MemberBo;
+import lk.ijse.BO.impl.MemberBoImpl;
 import lk.ijse.Model.MemberDto;
 import lk.ijse.TM.LoadMemberFormController;
 import lk.ijse.dao.MemberDao;
@@ -54,7 +56,7 @@ public class UpdatememberFormController {
     @FXML
     private ImageView img;
 
-    MemberDao memberDao = new MemberDaoImpl();
+    MemberBo memberDao = new MemberBoImpl();
     public void initialize() throws IOException {
         Font.loadFont(getClass().getResourceAsStream("/front/"),14);
         ObservableList<String> observableArray = FXCollections.observableArrayList(

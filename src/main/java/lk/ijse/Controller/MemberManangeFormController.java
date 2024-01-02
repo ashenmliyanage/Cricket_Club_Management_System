@@ -14,6 +14,8 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import lk.ijse.BO.MemberBo;
+import lk.ijse.BO.impl.MemberBoImpl;
 import lk.ijse.Model.MemberDto;
 import lk.ijse.TM.LoadMemberFormController;
 import lk.ijse.dao.MemberDao;
@@ -36,7 +38,7 @@ public class MemberManangeFormController {
     @FXML
     private VBox vBox;
 
-    MemberDao memberDao = new MemberDaoImpl();
+    MemberBo memberDao = new MemberBoImpl();
 
     public void initialize() throws IOException, SQLException, ClassNotFoundException {
         IDSAutoFill = TextFields.bindAutoCompletion(search,IdsSuggest);
@@ -47,6 +49,7 @@ public class MemberManangeFormController {
         Count.setText(String.valueOf(memberDao.getMemberCount()));
     }
     public void LoadTable() throws IOException, SQLException, ClassNotFoundException {
+
         ArrayList<MemberDto> list = memberDao.getAll();
 
         VBox vBox = new VBox();
