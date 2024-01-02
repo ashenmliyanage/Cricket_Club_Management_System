@@ -12,6 +12,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import lk.ijse.BO.CreateAccountBo;
+import lk.ijse.BO.impl.CreateAccountBoImpl;
 import lk.ijse.Model.UserDto;
 import lk.ijse.dao.UserDao;
 import lk.ijse.dao.impl.UserDaoimpl;
@@ -41,6 +43,8 @@ public class CreateAccountFormController implements Initializable {
     public static boolean sign = false;
     public static String Uid;
 
+    CreateAccountBo userDao = new CreateAccountBoImpl();
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Font.loadFont(getClass().getResourceAsStream("/front/AnonymousPro-Bold.ttf"),14);
@@ -62,7 +66,6 @@ public class CreateAccountFormController implements Initializable {
         boolean validEmail = Validation.isValidEmail(Email.getText());
 
         if (validEmail){
-            UserDao userDao = new UserDaoimpl();
             try {
                 String id = userDao.generateId("User_Id", "User", "U0");
                 Uid = id;

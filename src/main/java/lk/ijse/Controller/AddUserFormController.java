@@ -57,7 +57,7 @@ public class AddUserFormController {
     void SavebtnOnActhion(ActionEvent event) {
         int Age = Integer.parseInt(this.Age.getText());
         try {
-            String Id = userDao.generateId("User_Id", "user", "U0");
+            String Id = userDao.generateId("User_Id", "User", "U0");
             boolean save = userDao.Save(new UserDto(Id, name.getText(), Address.getText(), Age, this.Email.getText(), username.getText(), password.getText(), inputStream));
 
             if (save){
