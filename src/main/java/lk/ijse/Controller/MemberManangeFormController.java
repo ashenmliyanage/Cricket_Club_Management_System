@@ -7,6 +7,7 @@ import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
@@ -142,6 +143,9 @@ public class MemberManangeFormController {
                 popupStage.setScene(new Scene(root));
                 popupStage.setTitle("FXML Popup Form");
                 popupStage.showAndWait();
+            }
+            else {
+                new Alert(Alert.AlertType.INFORMATION,"Can't find member").show();
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
