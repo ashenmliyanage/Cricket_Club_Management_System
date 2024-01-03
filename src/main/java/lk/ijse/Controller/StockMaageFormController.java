@@ -63,7 +63,6 @@ public class StockMaageFormController {
 
 
     StockManageBo stockManageDao = new StockManageBoImpl();
-    MemberBo memberDao = new MemberBoImpl();
     public void initialize() throws IOException {
         Font.loadFont(getClass().getResourceAsStream("/front/"), 14);
         Table.setStyle("-fx-background-color: rgba(147, 236, 249, 0.25);");
@@ -173,7 +172,7 @@ public class StockMaageFormController {
 
 
         try {
-            ArrayList<MemberDto> list = memberDao.getAll();
+            ArrayList<MemberDto> list = stockManageDao.geMembertAll();
             System.out.println(list);
             items = FXCollections.observableArrayList();
             items.add("Not a Member");

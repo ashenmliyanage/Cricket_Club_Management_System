@@ -5,6 +5,7 @@ import lk.ijse.Dao1.MemberDao;
 import lk.ijse.Dao1.MemberDaoImpl;
 import lk.ijse.Dao1.StockDao;
 import lk.ijse.Dao1.StockDaoImpl;
+import lk.ijse.Model.MemberDto;
 import lk.ijse.Model.StockDto;
 import lk.ijse.entity.Member;
 import lk.ijse.entity.Stock;
@@ -83,12 +84,12 @@ public class StockManageBoImpl implements StockManageBo {
     }
 
     @Override
-    public ArrayList<Member> geMembertAll() throws SQLException, ClassNotFoundException {
+    public ArrayList<MemberDto> geMembertAll() throws SQLException, ClassNotFoundException {
         ResultSet resultSet = SQLUtil.execute("SELECT * FROM member");
-        ArrayList<Member> dtos = new ArrayList<>();
+        ArrayList<MemberDto> dtos = new ArrayList<>();
 
         while (resultSet.next()){
-            dtos.add(new Member(
+            dtos.add(new MemberDto(
                     resultSet.getString(1),
                     resultSet.getString(2),
                     resultSet.getString(3),
@@ -101,4 +102,5 @@ public class StockManageBoImpl implements StockManageBo {
         }
         return dtos;
     }
+
 }

@@ -1,5 +1,6 @@
 package lk.ijse.BO;
 
+import lk.ijse.Model.MemberDto;
 import lk.ijse.Model.StockDto;
 import lk.ijse.entity.Member;
 
@@ -17,5 +18,5 @@ public interface StockManageBo {
 
     StockDto getData(String id) throws SQLException, ClassNotFoundException;
 
-    ArrayList<Member> geMembertAll() throws SQLException, ClassNotFoundException;
+    ArrayList<MemberDto> geMembertAll() throws SQLException, ClassNotFoundException;
 }
