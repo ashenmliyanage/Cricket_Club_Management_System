@@ -132,17 +132,10 @@ public class LoadMemberFormController implements Initializable {
         try {
             FXMLLoader loader = new FXMLLoader(PopUPForm.class.getResource("/View/UpdatememberForm.fxml"));
             Parent root = loader.load();
-
-// Access the controller
             UpdatememberFormController controller = loader.getController();
-
-// Pass data to the controller
             controller.initData(name);
-
-// Create a new stage for the pop-up form
             popupStage = new Stage();
             popupStage.initModality(Modality.APPLICATION_MODAL);
-// Set the FXML content in the pop-up stage
             popupStage.setScene(new Scene(root));
             popupStage.setTitle("FXML Popup Form");
             popupStage.showAndWait();
