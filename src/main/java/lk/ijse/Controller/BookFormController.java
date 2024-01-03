@@ -56,8 +56,6 @@ public class BookFormController implements Initializable {
 
     private final ObservableList<bookTm> obList = FXCollections.observableArrayList();
 
-    MemberBo memberDao = new MemberBoImpl();
-    StockManageBo stockManageDao = new StockManageBoImpl();
     BookBo bookDao = new BookBoImpl();
     @FXML
     void AddbtnOnActhion(ActionEvent event) {
@@ -131,7 +129,7 @@ public class BookFormController implements Initializable {
     @FXML
     void MemberNameOnActhion(ActionEvent event) throws SQLException, ClassNotFoundException {
 
-        MemberDto data = memberDao.getData(MemberName.getText());
+        MemberDto data = bookDao.getMData(MemberName.getText());
 
         try {
             Member_Id.setText(data.getMember_id());
@@ -179,7 +177,7 @@ public class BookFormController implements Initializable {
     public void itemcbmOnActhion(ActionEvent actionEvent) {
 
         try {
-            StockDto data = stockManageDao.getData(this.ItemCmb.getValue());
+            StockDto data = bookDao.getData(this.ItemCmb.getValue());
             Type.setText(data.getType());
             QtyOnHand.setText(String.valueOf(data.getCount()));
         } catch (SQLException e) {
@@ -201,7 +199,7 @@ public class BookFormController implements Initializable {
     private void loadItemCodes() {
         ObservableList<String> obList = FXCollections.observableArrayList();
         try {
-            List<StockDto> itemList = stockManageDao.getAll();
+            List<StockDto> itemList = bookDao.getAll();
 
             for (StockDto itemDto : itemList) {
                 obList.add(itemDto.getCode());
