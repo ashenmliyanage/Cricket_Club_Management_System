@@ -15,10 +15,6 @@ import lk.ijse.BO.impl.StockManageBoImpl;
 import lk.ijse.Model.MemberDto;
 import lk.ijse.Model.StockDto;
 import lk.ijse.TM.StockTM;
-import lk.ijse.dao.MemberDao;
-import lk.ijse.dao.StockManageDao;
-import lk.ijse.dao.impl.MemberDaoImpl;
-import lk.ijse.dao.impl.StockManageDaoimpl;
 import lk.ijse.util.Validation;
 
 import java.io.IOException;

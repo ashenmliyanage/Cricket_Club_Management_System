@@ -13,7 +13,6 @@ import lk.ijse.BO.impl.LoginBoImpl;
 import lk.ijse.BO.impl.SettingBoImpl;
 import lk.ijse.Dao1.UserDao;
 import lk.ijse.Model.UserDto;
-import lk.ijse.dao.impl.UserDaoimpl;
 import lk.ijse.util.ImageAutoCrop;
 import lk.ijse.util.PopUPForm;
 import lk.ijse.util.Validation;

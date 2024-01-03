@@ -15,8 +15,6 @@ import javafx.stage.FileChooser;
 import lk.ijse.BO.MemberBo;
 import lk.ijse.BO.impl.MemberBoImpl;
 import lk.ijse.Model.MemberDto;
-import lk.ijse.dao.MemberDao;
-import lk.ijse.dao.impl.MemberDaoImpl;
 import lk.ijse.util.ImageAutoCrop;
 import lk.ijse.util.PopUPForm;
 

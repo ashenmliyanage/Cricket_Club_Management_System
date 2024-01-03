@@ -1,4 +1,4 @@
-package lk.ijse.TM;
+package lk.ijse.Controller;
 
 import com.jfoenix.controls.JFXButton;
 import javafx.animation.ScaleTransition;

@@ -15,8 +15,6 @@ import javafx.scene.layout.AnchorPane;
 import lk.ijse.BO.CreateAccountBo;
 import lk.ijse.BO.impl.CreateAccountBoImpl;
 import lk.ijse.Model.UserDto;
-import lk.ijse.dao.UserDao;
-import lk.ijse.dao.impl.UserDaoimpl;
 import lk.ijse.util.Validation;
 
 import java.io.IOException;

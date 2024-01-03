@@ -22,10 +22,6 @@ import javafx.util.Duration;
 import lk.ijse.BO.DashboardBo;
 import lk.ijse.BO.impl.DashboardBoImpl;
 import lk.ijse.Model.MemberDto;
-import lk.ijse.dao.MemberDao;
-import lk.ijse.dao.StockManageDao;
-import lk.ijse.dao.impl.MemberDaoImpl;
-import lk.ijse.dao.impl.StockManageDaoimpl;
 import lombok.SneakyThrows;
 
 

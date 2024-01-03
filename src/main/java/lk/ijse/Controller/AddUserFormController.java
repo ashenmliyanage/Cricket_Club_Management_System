@@ -11,8 +11,6 @@ import javafx.stage.FileChooser;
 import lk.ijse.BO.SettingBo;
 import lk.ijse.BO.impl.SettingBoImpl;
 import lk.ijse.Model.UserDto;
-import lk.ijse.dao.UserDao;
-import lk.ijse.dao.impl.UserDaoimpl;
 import lk.ijse.util.ImageAutoCrop;
 
 import java.io.File;

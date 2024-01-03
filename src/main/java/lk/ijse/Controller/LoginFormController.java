@@ -12,11 +12,6 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Font;
 import lk.ijse.BO.LoginBo;
 import lk.ijse.BO.impl.LoginBoImpl;
-import lk.ijse.Model.UserDto;
-import lk.ijse.dao.MemberDao;
-import lk.ijse.dao.UserDao;
-import lk.ijse.dao.impl.MemberDaoImpl;
-import lk.ijse.dao.impl.UserDaoimpl;
 import javafx.scene.control.TextField;
 
 import java.awt.*;
