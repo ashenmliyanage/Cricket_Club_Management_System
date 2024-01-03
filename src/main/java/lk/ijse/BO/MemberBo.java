@@ -22,4 +22,6 @@ public interface MemberBo {
     boolean Save(MemberDto dto) throws SQLException, ClassNotFoundException;
 
     boolean update(MemberDto dto) throws SQLException, ClassNotFoundException;
+
+    boolean Delete(String name) throws SQLException, ClassNotFoundException;
 }

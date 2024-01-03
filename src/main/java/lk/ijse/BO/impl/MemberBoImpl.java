@@ -90,4 +90,9 @@ public class MemberBoImpl implements MemberBo {
                 dto.getImage()
         ));
     }
+
+    @Override
+    public boolean Delete(String name) throws SQLException, ClassNotFoundException {
+        return memberDao.Delete(name);
+    }
 }

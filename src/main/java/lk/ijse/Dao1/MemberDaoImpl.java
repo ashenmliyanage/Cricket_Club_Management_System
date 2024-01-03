@@ -115,4 +115,11 @@ public class MemberDaoImpl implements MemberDao{
                 dto.getImage(),
                 dto.getMember_id());
     }
+
+    @Override
+    public boolean Delete(String name) throws SQLException, ClassNotFoundException {
+        return SQLUtil.execute(
+                "DELETE FROM member WHERE Full_Name = ?",name
+        );
+    }
 }

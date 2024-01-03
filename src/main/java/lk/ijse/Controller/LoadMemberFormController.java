@@ -22,10 +22,10 @@ import javafx.scene.text.Font;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import lk.ijse.BO.MemberBo;
+import lk.ijse.BO.impl.MemberBoImpl;
 import lk.ijse.Controller.UpdatememberFormController;
 import lk.ijse.Model.MemberDto;
-import lk.ijse.dao.MemberDao;
-import lk.ijse.dao.impl.MemberDaoImpl;
 import lk.ijse.util.PopUPForm;
 
 import java.io.IOException;
@@ -56,6 +56,8 @@ public class LoadMemberFormController implements Initializable {
 
     @FXML
     private Label tMemberName;
+
+    MemberBo memberDao = new MemberBoImpl();
 
     public void setData(ArrayList<MemberDto> list){
 
@@ -181,7 +183,6 @@ public class LoadMemberFormController implements Initializable {
             PopUPForm.openFXMLPopupForm("AddmemberForm.fxml",popupStage);
         }
         else {
-            MemberDao memberDao = new MemberDaoImpl();
             boolean delete = memberDao.Delete(fMembername.getText());
 
             if (delete){
@@ -195,7 +196,6 @@ public class LoadMemberFormController implements Initializable {
             PopUPForm.openFXMLPopupForm("AddmemberForm.fxml",popupStage);
         }
         else {
-            MemberDao memberDao = new MemberDaoImpl();
             boolean delete = memberDao.Delete(sMemberName.getText());
 
             if (delete){
@@ -209,7 +209,6 @@ public class LoadMemberFormController implements Initializable {
             PopUPForm.openFXMLPopupForm("AddmemberForm.fxml",popupStage);
         }
         else {
-            MemberDao memberDao = new MemberDaoImpl();
             boolean delete = memberDao.Delete(tMemberName.getText());
 
             if (delete){
@@ -223,7 +222,6 @@ public class LoadMemberFormController implements Initializable {
             PopUPForm.openFXMLPopupForm("AddmemberForm.fxml",popupStage);
         }
         else {
-            MemberDao memberDao = new MemberDaoImpl();
             boolean delete = memberDao.Delete(foMemberName.getText());
 
             if (delete){
