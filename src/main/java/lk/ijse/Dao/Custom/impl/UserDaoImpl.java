@@ -1,12 +1,13 @@
-package lk.ijse.Dao;
+package lk.ijse.Dao.Custom.impl;
 
+import lk.ijse.Dao.Custom.UserDao;
 import lk.ijse.entity.User;
 import lk.ijse.util.SQLUtil;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class UserDaoImpl implements UserDao{
+public class UserDaoImpl implements UserDao {
     @Override
     public User Login(String username) throws SQLException, ClassNotFoundException {
         ResultSet resultSet = SQLUtil.execute("SELECT * FROM User WHERE Username = ?", username);

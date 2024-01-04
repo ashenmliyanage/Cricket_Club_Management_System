@@ -1,10 +1,10 @@
 package lk.ijse.BO.impl;
 
 import lk.ijse.BO.DashboardBo;
-import lk.ijse.Dao.MemberDao;
-import lk.ijse.Dao.MemberDaoImpl;
-import lk.ijse.Dao.StockDao;
-import lk.ijse.Dao.StockDaoImpl;
+import lk.ijse.Dao.Custom.MemberDao;
+import lk.ijse.Dao.Custom.impl.MemberDaoImpl;
+import lk.ijse.Dao.Custom.StockDao;
+import lk.ijse.Dao.Custom.impl.StockDaoImpl;
 import lk.ijse.Model.MemberDto;
 import lk.ijse.entity.Member;
 import lk.ijse.entity.Stock;

@@ -1,4 +1,4 @@
-package lk.ijse.Dao;
+package lk.ijse.Dao.Custom;
 
 import lk.ijse.entity.OrderDetails;
 

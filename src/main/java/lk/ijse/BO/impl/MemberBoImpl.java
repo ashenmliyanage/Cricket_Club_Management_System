@@ -1,8 +1,8 @@
 package lk.ijse.BO.impl;
 
 import lk.ijse.BO.MemberBo;
-import lk.ijse.Dao.MemberDao;
-import lk.ijse.Dao.MemberDaoImpl;
+import lk.ijse.Dao.Custom.MemberDao;
+import lk.ijse.Dao.Custom.impl.MemberDaoImpl;
 import lk.ijse.Model.MemberDto;
 import lk.ijse.entity.Member;
 

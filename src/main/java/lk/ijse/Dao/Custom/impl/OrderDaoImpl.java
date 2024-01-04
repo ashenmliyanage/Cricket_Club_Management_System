@@ -1,5 +1,6 @@
-package lk.ijse.Dao;
+package lk.ijse.Dao.Custom.impl;
 
+import lk.ijse.Dao.Custom.OrderDao;
 import lk.ijse.entity.Order;
 import lk.ijse.util.SQLUtil;
 

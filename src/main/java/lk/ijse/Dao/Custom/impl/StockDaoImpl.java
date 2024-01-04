@@ -1,5 +1,6 @@
-package lk.ijse.Dao;
+package lk.ijse.Dao.Custom.impl;
 
+import lk.ijse.Dao.Custom.StockDao;
 import lk.ijse.TM.bookTm;
 import lk.ijse.entity.Stock;
 import lk.ijse.util.SQLUtil;
@@ -8,7 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class StockDaoImpl implements StockDao{
+public class StockDaoImpl implements StockDao {
     @Override
     public ArrayList<Stock> getAll() throws SQLException, ClassNotFoundException {
         ResultSet resultSet = SQLUtil.execute("SELECT * FROM stock");

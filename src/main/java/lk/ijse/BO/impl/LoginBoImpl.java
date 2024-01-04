@@ -1,8 +1,8 @@
 package lk.ijse.BO.impl;
 
 import lk.ijse.BO.LoginBo;
-import lk.ijse.Dao.UserDao;
-import lk.ijse.Dao.UserDaoImpl;
+import lk.ijse.Dao.Custom.UserDao;
+import lk.ijse.Dao.Custom.impl.UserDaoImpl;
 import lk.ijse.entity.User;
 
 import java.sql.SQLException;
