@@ -1,6 +1,6 @@
-package lk.ijse.BO.impl;
+package lk.ijse.BO.custom.impl;
 
-import lk.ijse.BO.DashboardBo;
+import lk.ijse.BO.custom.DashboardBo;
 import lk.ijse.Dao.Custom.MemberDao;
 import lk.ijse.Dao.Custom.impl.MemberDaoImpl;
 import lk.ijse.Dao.Custom.StockDao;

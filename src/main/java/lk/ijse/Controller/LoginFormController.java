@@ -10,11 +10,10 @@ import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Font;
-import lk.ijse.BO.LoginBo;
-import lk.ijse.BO.impl.LoginBoImpl;
+import lk.ijse.BO.custom.LoginBo;
+import lk.ijse.BO.custom.impl.LoginBoImpl;
 import javafx.scene.control.TextField;
 
-import java.awt.*;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;

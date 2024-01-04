@@ -1,7 +1,6 @@
 package lk.ijse.Controller;
 
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableArray;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -12,18 +11,15 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Font;
 import javafx.stage.FileChooser;
-import lk.ijse.BO.MemberBo;
-import lk.ijse.BO.impl.MemberBoImpl;
+import lk.ijse.BO.custom.MemberBo;
+import lk.ijse.BO.custom.impl.MemberBoImpl;
 import lk.ijse.Model.MemberDto;
 import lk.ijse.util.ImageAutoCrop;
 import lk.ijse.util.PopUPForm;
 
-import java.awt.*;
-import java.awt.image.BufferedImage;
 import java.io.*;
 import java.sql.SQLException;
 
-import javafx.embed.swing.SwingFXUtils;
 import lk.ijse.util.Validation;
 
 public class AddmemberFormController {

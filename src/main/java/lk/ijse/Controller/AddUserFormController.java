@@ -8,8 +8,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
-import lk.ijse.BO.SettingBo;
-import lk.ijse.BO.impl.SettingBoImpl;
+import lk.ijse.BO.custom.SettingBo;
+import lk.ijse.BO.custom.impl.SettingBoImpl;
 import lk.ijse.Model.UserDto;
 import lk.ijse.util.ImageAutoCrop;
 

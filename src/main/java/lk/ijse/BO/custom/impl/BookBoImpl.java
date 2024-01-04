@@ -1,6 +1,6 @@
-package lk.ijse.BO.impl;
+package lk.ijse.BO.custom.impl;
 
-import lk.ijse.BO.BookBo;
+import lk.ijse.BO.custom.BookBo;
 import lk.ijse.Dao.Custom.*;
 import lk.ijse.Dao.Custom.impl.MemberDaoImpl;
 import lk.ijse.Dao.Custom.impl.OrderDaoImpl;

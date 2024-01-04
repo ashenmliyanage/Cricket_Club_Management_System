@@ -1,26 +1,20 @@
 package lk.ijse.Controller;
 
 import javafx.animation.*;
-import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.Scene;
 import javafx.scene.chart.LineChart;
-import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Label;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
-import javafx.scene.text.Text;
-import javafx.stage.Stage;
 import javafx.util.Duration;
-import lk.ijse.BO.DashboardBo;
-import lk.ijse.BO.impl.DashboardBoImpl;
+import lk.ijse.BO.custom.DashboardBo;
+import lk.ijse.BO.custom.impl.DashboardBoImpl;
 import lk.ijse.Model.MemberDto;
 import lombok.SneakyThrows;
 
@@ -34,7 +28,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.List;
-import java.net.URL;
+
 import static javafx.application.Application.launch;
 
 public class DashbordFormController implements Initializable {

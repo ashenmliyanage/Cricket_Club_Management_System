@@ -1,4 +1,4 @@
-package lk.ijse.BO;
+package lk.ijse.BO.custom;
 
 import java.sql.SQLException;
 

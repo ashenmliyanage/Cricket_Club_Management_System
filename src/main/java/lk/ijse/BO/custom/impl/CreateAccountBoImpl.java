@@ -1,6 +1,6 @@
-package lk.ijse.BO.impl;
+package lk.ijse.BO.custom.impl;
 
-import lk.ijse.BO.CreateAccountBo;
+import lk.ijse.BO.custom.CreateAccountBo;
 import lk.ijse.Dao.Custom.UserDao;
 import lk.ijse.Dao.Custom.impl.UserDaoImpl;
 import lk.ijse.Model.UserDto;
