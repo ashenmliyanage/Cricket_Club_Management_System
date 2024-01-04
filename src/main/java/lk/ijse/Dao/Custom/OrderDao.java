@@ -1,11 +1,11 @@
 package lk.ijse.Dao.Custom;
 
 import lk.ijse.entity.Order;
+import lk.ijse.entity.Stock;
+import lk.ijse.util.CrudUtil;
 
 import java.sql.SQLException;
 
-public interface OrderDao {
-    boolean Save(Order dto) throws SQLException, ClassNotFoundException;
+public interface OrderDao extends CrudUtil<Order> {
 
-    String generateId(String colum, String table, String type) throws SQLException, ClassNotFoundException;
 }

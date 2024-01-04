@@ -9,7 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class StockDaoImpl implements StockDao {
+public class StockDaoImpl implements StockDao{
     @Override
     public ArrayList<Stock> getAll() throws SQLException, ClassNotFoundException {
         ResultSet resultSet = SQLUtil.execute("SELECT * FROM stock");
