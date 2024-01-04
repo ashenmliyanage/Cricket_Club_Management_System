@@ -8,7 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class MemberDaoImpl implements MemberDao {
+public class MemberDaoImpl implements MemberDao{
     @Override
     public ArrayList<Member> getSixData() throws SQLException, ClassNotFoundException {
         ResultSet resultSet = SQLUtil.execute("select * from member order by Member_ID desc");
@@ -39,6 +39,20 @@ public class MemberDaoImpl implements MemberDao {
     }
 
     @Override
+    public boolean update(Member dto) throws SQLException, ClassNotFoundException {
+        return SQLUtil.execute(
+                "UPDATE member SET Full_Name = ?, Position = ?, bod = ?, Age = ?, Email = ?, Address = ?, Image = ? WHERE Member_ID=?",
+                dto.getFull_name(),
+                dto.getPosition(),
+                dto.getBod(),
+                dto.getAge(),
+                dto.getEmail(),
+                dto.getAddress(),
+                dto.getImage(),
+                dto.getMember_id());
+    }
+
+    @Override
     public ArrayList<Member> getAll() throws SQLException, ClassNotFoundException {
         ResultSet resultSet = SQLUtil.execute("SELECT * FROM member");
         ArrayList<Member> dtos = new ArrayList<>();
@@ -59,20 +73,14 @@ public class MemberDaoImpl implements MemberDao {
     }
 
     @Override
-    public ArrayList<String> getAllName() throws SQLException, ClassNotFoundException {
-        ResultSet resultSet = SQLUtil.execute("SELECT Full_Name FROM member");
-        ArrayList<String> array = new ArrayList<>();
-
-        while (resultSet.next()){
-            array.add(resultSet.getString(1));
-        }
-
-        return array;
+    public boolean Save(Member dto) throws SQLException, ClassNotFoundException {
+        return SQLUtil.execute("INSERT INTO member VALUES (?,?,?,?,?,?,?,?)",
+                dto.getMember_id(),dto.getFull_name(),dto.getPosition(),dto.getBod(),dto.getAge(),dto.getEmail(),dto.getAddress(),dto.getImage());
     }
 
     @Override
-    public Member getData(String id) throws SQLException, ClassNotFoundException {
-        ResultSet resultSet = SQLUtil.execute("SELECT * FROM member WHERE Full_Name = ?", id);
+    public Member getData(String Id) throws SQLException, ClassNotFoundException {
+        ResultSet resultSet = SQLUtil.execute("SELECT * FROM member WHERE Full_Name = ?", Id);
 
         Member dto = null;
 
@@ -98,29 +106,21 @@ public class MemberDaoImpl implements MemberDao {
     }
 
     @Override
-    public boolean Save(Member dto) throws SQLException, ClassNotFoundException {
-        return SQLUtil.execute("INSERT INTO member VALUES (?,?,?,?,?,?,?,?)",
-                dto.getMember_id(),dto.getFull_name(),dto.getPosition(),dto.getBod(),dto.getAge(),dto.getEmail(),dto.getAddress(),dto.getImage());
-    }
-
-    @Override
-    public boolean update(Member dto) throws SQLException, ClassNotFoundException {
-        return SQLUtil.execute(
-                "UPDATE member SET Full_Name = ?, Position = ?, bod = ?, Age = ?, Email = ?, Address = ?, Image = ? WHERE Member_ID=?",
-                dto.getFull_name(),
-                dto.getPosition(),
-                dto.getBod(),
-                dto.getAge(),
-                dto.getEmail(),
-                dto.getAddress(),
-                dto.getImage(),
-                dto.getMember_id());
-    }
-
-    @Override
-    public boolean Delete(String name) throws SQLException, ClassNotFoundException {
-        return SQLUtil.execute(
-                "DELETE FROM member WHERE Full_Name = ?",name
+    public boolean Delete(String id) throws SQLException, ClassNotFoundException {
+                return SQLUtil.execute(
+                "DELETE FROM member WHERE Full_Name = ?",id
         );
+    }
+
+    @Override
+    public ArrayList<String> getAllName() throws SQLException, ClassNotFoundException {
+        ResultSet resultSet = SQLUtil.execute("SELECT Full_Name FROM member");
+        ArrayList<String> array = new ArrayList<>();
+
+        while (resultSet.next()){
+            array.add(resultSet.getString(1));
+        }
+
+        return array;
     }
 }
