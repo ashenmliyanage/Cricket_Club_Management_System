@@ -8,6 +8,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.text.Font;
+import lk.ijse.BO.BOFactory;
 import lk.ijse.BO.custom.StockManageBo;
 import lk.ijse.BO.custom.impl.StockManageBoImpl;
 import lk.ijse.Model.MemberDto;
@@ -60,7 +61,7 @@ public class StockMaageFormController {
     private JFXButton Savebtn;
 
 
-    StockManageBo stockManageDao = new StockManageBoImpl();
+    StockManageBo stockManageDao = (StockManageBo) BOFactory.getInstance().getBO(BOFactory.BOType.Stock);
     public void initialize() throws IOException {
         Font.loadFont(getClass().getResourceAsStream("/front/"), 14);
         Table.setStyle("-fx-background-color: rgba(147, 236, 249, 0.25);");

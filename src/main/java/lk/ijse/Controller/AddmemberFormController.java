@@ -11,6 +11,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Font;
 import javafx.stage.FileChooser;
+import lk.ijse.BO.BOFactory;
 import lk.ijse.BO.custom.MemberBo;
 import lk.ijse.BO.custom.impl.MemberBoImpl;
 import lk.ijse.Model.MemberDto;
@@ -37,7 +38,7 @@ public class AddmemberFormController {
 
     InputStream inputStream;
 
-    MemberBo memberDao = new MemberBoImpl();
+    MemberBo memberDao = (MemberBo) BOFactory.getInstance().getBO(BOFactory.BOType.Member);
     @FXML
     void SavebtnOnActhion(ActionEvent event) {
         String Name = FullName.getText();

@@ -1,10 +1,11 @@
 package lk.ijse.BO.custom;
 
+import lk.ijse.BO.SuperBO;
 import lk.ijse.Model.UserDto;
 
 import java.sql.SQLException;
 
-public interface SettingBo {
+public interface SettingBo extends SuperBO {
     boolean update(UserDto dto) throws SQLException, ClassNotFoundException;
 
     UserDto getData(String id) throws SQLException, ClassNotFoundException;

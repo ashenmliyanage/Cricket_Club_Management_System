@@ -7,6 +7,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
+import lk.ijse.BO.BOFactory;
 import lk.ijse.BO.custom.SettingBo;
 import lk.ijse.BO.custom.impl.LoginBoImpl;
 import lk.ijse.BO.custom.impl.SettingBoImpl;
@@ -25,7 +26,7 @@ import java.util.ResourceBundle;
 
 public class SettingsFormController implements Initializable {
 
-    SettingBo userDao = new SettingBoImpl();
+    SettingBo userDao = (SettingBo) BOFactory.getInstance().getBO(BOFactory.BOType.Setting);
 
     public ImageView image;
     public TextField N_userName;

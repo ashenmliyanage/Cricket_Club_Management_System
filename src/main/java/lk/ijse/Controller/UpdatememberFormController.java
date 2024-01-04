@@ -10,6 +10,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Font;
 import javafx.stage.FileChooser;
+import lk.ijse.BO.BOFactory;
 import lk.ijse.BO.custom.MemberBo;
 import lk.ijse.BO.custom.impl.MemberBoImpl;
 import lk.ijse.Model.MemberDto;
@@ -46,7 +47,8 @@ public class UpdatememberFormController {
     @FXML
     private ImageView img;
 
-    MemberBo memberDao = new MemberBoImpl();
+    MemberBo memberDao = (MemberBo) BOFactory.getInstance().getBO(BOFactory.BOType.Member);
+
     public void initialize() throws IOException {
         Font.loadFont(getClass().getResourceAsStream("/front/"),14);
         ObservableList<String> observableArray = FXCollections.observableArrayList(

@@ -19,6 +19,7 @@ import javafx.scene.text.Font;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import lk.ijse.BO.BOFactory;
 import lk.ijse.BO.custom.MemberBo;
 import lk.ijse.BO.custom.impl.MemberBoImpl;
 import lk.ijse.Model.MemberDto;
@@ -52,7 +53,7 @@ public class LoadMemberFormController implements Initializable {
     @FXML
     private Label tMemberName;
 
-    MemberBo memberDao = new MemberBoImpl();
+    MemberBo memberDao = (MemberBo) BOFactory.getInstance().getBO(BOFactory.BOType.Member);
 
     public void setData(ArrayList<MemberDto> list){
 

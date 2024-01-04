@@ -8,6 +8,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
+import lk.ijse.BO.BOFactory;
 import lk.ijse.BO.custom.SettingBo;
 import lk.ijse.BO.custom.impl.SettingBoImpl;
 import lk.ijse.Model.UserDto;
@@ -45,7 +46,7 @@ public class AddUserFormController {
     @FXML
     private TextField username;
 
-    SettingBo userDao = new SettingBoImpl();
+    SettingBo userDao = (SettingBo) BOFactory.getInstance().getBO(BOFactory.BOType.Setting);
     @FXML
     void NamebtnOnActhion(ActionEvent event) {
         label.setText(name.getText());

@@ -13,6 +13,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.util.Duration;
+import lk.ijse.BO.BOFactory;
 import lk.ijse.BO.custom.DashboardBo;
 import lk.ijse.BO.custom.impl.DashboardBoImpl;
 import lk.ijse.Model.MemberDto;
@@ -79,7 +80,7 @@ public class DashbordFormController implements Initializable {
     @FXML
     private Label Name6;
 
-    DashboardBo dashboardBo = new DashboardBoImpl();
+    DashboardBo dashboardBo = (DashboardBo) BOFactory.getInstance().getBO(BOFactory.BOType.Dashboard);
 
 //    private void initializeImageSlideshow() {
 //

@@ -9,6 +9,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Cursor;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import lk.ijse.BO.BOFactory;
 import lk.ijse.BO.custom.BookBo;
 import lk.ijse.BO.custom.impl.BookBoImpl;
 import lk.ijse.Model.MemberDto;
@@ -51,7 +52,7 @@ public class BookFormController implements Initializable {
 
     private final ObservableList<bookTm> obList = FXCollections.observableArrayList();
 
-    BookBo bookDao = new BookBoImpl();
+    BookBo bookDao = (BookBo) BOFactory.getInstance().getBO(BOFactory.BOType.Book);
     @FXML
     void AddbtnOnActhion(ActionEvent event) {
 

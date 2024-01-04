@@ -1,5 +1,6 @@
 package lk.ijse.BO.custom;
 
+import lk.ijse.BO.SuperBO;
 import lk.ijse.Model.MemberDto;
 import lk.ijse.Model.StockDto;
 import lk.ijse.entity.Member;
@@ -7,7 +8,7 @@ import lk.ijse.entity.Member;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public interface StockManageBo {
+public interface StockManageBo extends SuperBO {
     boolean Save(StockDto dto) throws SQLException, ClassNotFoundException;
 
     boolean update(StockDto dto) throws SQLException, ClassNotFoundException;

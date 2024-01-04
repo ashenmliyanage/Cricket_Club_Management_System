@@ -10,6 +10,7 @@ import javafx.scene.text.Font;
 import javafx.fxml.FXML;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import lk.ijse.BO.BOFactory;
 import lk.ijse.BO.custom.CreateAccountBo;
 import lk.ijse.BO.custom.impl.CreateAccountBoImpl;
 import lk.ijse.Model.UserDto;
@@ -39,7 +40,7 @@ public class CreateAccountFormController implements Initializable {
     public static boolean sign = false;
     public static String Uid;
 
-    CreateAccountBo userDao = new CreateAccountBoImpl();
+    CreateAccountBo userDao = (CreateAccountBo) BOFactory.getInstance().getBO(BOFactory.BOType.CreateAccount);
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
