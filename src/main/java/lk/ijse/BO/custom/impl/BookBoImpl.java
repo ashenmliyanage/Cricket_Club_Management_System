@@ -44,7 +44,7 @@ public class BookBoImpl implements BookBo {
         }
 
         for (bookTm tm : dto.getTmList()){
-            if (!orderDetailsDao.saveOrderDetail(new OrderDetails(ID,tm.getItemCode(),tm.getCount()))){
+            if (!orderDetailsDao.Save(new OrderDetails(ID,tm.getItemCode(),tm.getCount()))){
                 TransactionUtil.rollBack();
                 return false;
             }
