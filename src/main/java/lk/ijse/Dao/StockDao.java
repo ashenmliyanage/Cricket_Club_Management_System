@@ -1,12 +1,9 @@
-package lk.ijse.Dao1;
+package lk.ijse.Dao;
 
-import lk.ijse.Model.StockDto;
-import lk.ijse.TM.bookTm;
 import lk.ijse.entity.Stock;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.List;
 
 public interface StockDao {
     ArrayList<Stock> getAll() throws SQLException, ClassNotFoundException;

@@ -1,13 +1,12 @@
 package lk.ijse.BO.impl;
 
 import lk.ijse.BO.StockManageBo;
-import lk.ijse.Dao1.MemberDao;
-import lk.ijse.Dao1.MemberDaoImpl;
-import lk.ijse.Dao1.StockDao;
-import lk.ijse.Dao1.StockDaoImpl;
+import lk.ijse.Dao.MemberDao;
+import lk.ijse.Dao.MemberDaoImpl;
+import lk.ijse.Dao.StockDao;
+import lk.ijse.Dao.StockDaoImpl;
 import lk.ijse.Model.MemberDto;
 import lk.ijse.Model.StockDto;
-import lk.ijse.entity.Member;
 import lk.ijse.entity.Stock;
 import lk.ijse.util.SQLUtil;
 

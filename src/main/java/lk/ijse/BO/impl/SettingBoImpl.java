@@ -1,8 +1,8 @@
 package lk.ijse.BO.impl;
 
 import lk.ijse.BO.SettingBo;
-import lk.ijse.Dao1.UserDao;
-import lk.ijse.Dao1.UserDaoImpl;
+import lk.ijse.Dao.UserDao;
+import lk.ijse.Dao.UserDaoImpl;
 import lk.ijse.Model.UserDto;
 import lk.ijse.entity.User;
 

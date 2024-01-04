@@ -1,7 +1,6 @@
-package lk.ijse.Dao1;
+package lk.ijse.Dao;
 
 import lk.ijse.entity.OrderDetails;
-import lk.ijse.util.SQLUtil;
 
 import java.sql.SQLException;
 

@@ -1,4 +1,4 @@
-package lk.ijse.Dao1;
+package lk.ijse.Dao;
 
 import lk.ijse.entity.User;
 import lk.ijse.util.SQLUtil;

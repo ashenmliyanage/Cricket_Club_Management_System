@@ -1,6 +1,5 @@
-package lk.ijse.Dao1;
+package lk.ijse.Dao;
 
-import lk.ijse.Model.MemberDto;
 import lk.ijse.entity.Member;
 
 import java.sql.SQLException;

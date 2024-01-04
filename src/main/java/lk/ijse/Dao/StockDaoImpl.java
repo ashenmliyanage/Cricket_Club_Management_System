@@ -1,4 +1,4 @@
-package lk.ijse.Dao1;
+package lk.ijse.Dao;
 
 import lk.ijse.TM.bookTm;
 import lk.ijse.entity.Stock;
@@ -7,7 +7,6 @@ import lk.ijse.util.SQLUtil;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.List;
 
 public class StockDaoImpl implements StockDao{
     @Override

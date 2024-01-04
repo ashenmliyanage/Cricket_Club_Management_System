@@ -1,7 +1,7 @@
 package lk.ijse.BO.impl;
 
 import lk.ijse.BO.BookBo;
-import lk.ijse.Dao1.*;
+import lk.ijse.Dao.*;
 import lk.ijse.Model.MemberDto;
 import lk.ijse.Model.OrderDto;
 import lk.ijse.Model.StockDto;
