@@ -1,9 +1,11 @@
 package lk.ijse.util;
 
+import lk.ijse.Dao.SuperDAO;
+
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public interface CrudUtil<Ashen> {
+public interface CrudUtil<Ashen> extends SuperDAO {
     boolean update(Ashen dto) throws SQLException, ClassNotFoundException;
     ArrayList<Ashen> getAll() throws SQLException, ClassNotFoundException;
     boolean Save(Ashen dto) throws SQLException, ClassNotFoundException;
