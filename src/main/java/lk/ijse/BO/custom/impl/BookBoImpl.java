@@ -6,6 +6,7 @@ import lk.ijse.Dao.Custom.impl.MemberDaoImpl;
 import lk.ijse.Dao.Custom.impl.OrderDaoImpl;
 import lk.ijse.Dao.Custom.impl.OrderDetailDaoImpl;
 import lk.ijse.Dao.Custom.impl.StockDaoImpl;
+import lk.ijse.Dao.DAOFactory;
 import lk.ijse.Model.MemberDto;
 import lk.ijse.Model.OrderDto;
 import lk.ijse.Model.StockDto;
@@ -21,12 +22,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BookBoImpl implements BookBo {
-    OrderDao orderDao = new OrderDaoImpl();
+    OrderDao orderDao = (OrderDao) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOType.Order);
 
-    StockDao stockManageDao = new StockDaoImpl();
+    StockDao stockManageDao = (StockDao) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOType.Stock);
 
-    OrderDetailsDao orderDetailsDao = new OrderDetailDaoImpl();
-    MemberDao memberDao = new MemberDaoImpl();
+    OrderDetailsDao orderDetailsDao = (OrderDetailsDao) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOType.OrderDetails);
+    MemberDao memberDao = (MemberDao) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOType.Member);
 
 
 
