@@ -6,8 +6,9 @@ import lk.ijse.util.SQLUtil;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
-public class UserDaoImpl implements UserDao {
+public class UserDaoImpl implements UserDao{
     @Override
     public User Login(String username) throws SQLException, ClassNotFoundException {
         ResultSet resultSet = SQLUtil.execute("SELECT * FROM User WHERE Username = ?", username);
@@ -37,6 +38,11 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
+    public ArrayList<User> getAll() throws SQLException, ClassNotFoundException {
+        return null;
+    }
+
+    @Override
     public User getData(String id) throws SQLException, ClassNotFoundException {
         ResultSet resultSet = SQLUtil.execute("SELECT * FROM User WHERE User_Id = ?", id);
 
@@ -61,6 +67,11 @@ public class UserDaoImpl implements UserDao {
     @Override
     public String generateId(String colum, String table, String type) throws SQLException, ClassNotFoundException {
         return SQLUtil.genarate(colum,table,type);
+    }
+
+    @Override
+    public boolean Delete(String id) throws SQLException, ClassNotFoundException {
+        return false;
     }
 
     @Override
