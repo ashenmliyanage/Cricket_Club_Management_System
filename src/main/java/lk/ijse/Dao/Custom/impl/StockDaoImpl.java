@@ -49,6 +49,11 @@ public class StockDaoImpl implements StockDao{
     }
 
     @Override
+    public boolean Delete(String id) throws SQLException, ClassNotFoundException {
+        return false;
+    }
+
+    @Override
     public Stock getData(String id) throws SQLException, ClassNotFoundException {
         ResultSet resultSet = SQLUtil.execute("SELECT * FROM stock WHERE code = ?", id);
 
