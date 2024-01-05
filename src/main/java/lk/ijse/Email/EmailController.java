@@ -2,11 +2,9 @@ package lk.ijse.Email;
 
 
 import javax.mail.*;
-import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import java.util.Properties;
-import java.util.Random;
 
 public class EmailController  {
         public static void sendEmail(String email, int otp) throws MessagingException {
@@ -31,8 +29,6 @@ public class EmailController  {
             message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(email));
             message.setSubject("Ceylon Strikers");
 
-            int randomNumber = new Random().nextInt(9000) + 1000;
-
             String htmlboady =  "<html>\n" +
                     "<head>\n" +
                     "    <style>\n" +
@@ -53,7 +49,7 @@ public class EmailController  {
                     "<body>\n" +
                     "    <div class=\"container\">\n" +
                     "        <h1>Here's your Ceylon Strikers OTP code, @" + email + "!</h1>\n" +
-                    "        <h2>Your One-Time Password (OTP) is: <strong>" + randomNumber + "</strong></h2>\n" +
+                    "        <h2>Your One-Time Password (OTP) is: <strong>" + otp + "</strong></h2>\n" +
                     "    </div>\n" +
                     "</body>\n" +
                     "</html>\n";

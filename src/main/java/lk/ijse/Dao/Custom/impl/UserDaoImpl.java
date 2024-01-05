@@ -79,4 +79,26 @@ public class UserDaoImpl implements UserDao{
         return SQLUtil.execute("INSERT INTO User VALUES(?,?,?,?,?,?,?,?)",
                 dto.getUser_id(),dto.getName(),dto.getAddress(),dto.getAge(),dto.getMail(),dto.getUsername(),dto.getPassword(),dto.getImage());
     }
+
+    @Override
+    public String getUserId(String mail) throws SQLException, ClassNotFoundException {
+        ResultSet resultSet = SQLUtil.execute("SELECT * FROM User WHERE Mail = ?", mail);
+
+        User dto = null;
+
+        if (resultSet.next()) {
+            dto = new User(
+                    resultSet.getString(1),
+                    resultSet.getString(2),
+                    resultSet.getString(3),
+                    resultSet.getInt(4),
+                    resultSet.getString(5),
+                    resultSet.getString(6),
+                    resultSet.getString(7),
+                    resultSet.getAsciiStream(8)
+            );
+        }
+        System.out.println(dto);
+        return dto.getUser_id();
+    }
 }

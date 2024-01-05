@@ -12,4 +12,5 @@ public interface MemberDao extends CrudUtil<Member> {
     int getMemberCount() throws SQLException, ClassNotFoundException;
 
     ArrayList<String> getAllName() throws SQLException, ClassNotFoundException;
+
 }

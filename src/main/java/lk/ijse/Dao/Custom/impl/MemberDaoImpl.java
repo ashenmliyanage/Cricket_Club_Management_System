@@ -123,4 +123,6 @@ public class MemberDaoImpl implements MemberDao{
 
         return array;
     }
+
+
 }

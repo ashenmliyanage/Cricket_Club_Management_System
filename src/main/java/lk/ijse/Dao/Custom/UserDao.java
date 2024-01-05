@@ -8,4 +8,5 @@ import java.sql.SQLException;
 public interface UserDao extends CrudUtil<User> {
     User Login(String username) throws SQLException, ClassNotFoundException;
 
+    String getUserId(String mail) throws SQLException, ClassNotFoundException;
 }

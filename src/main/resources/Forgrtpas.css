@@ -41,4 +41,7 @@
     -fx-border-width: 1;
     -fx-border-color: rgba(148, 203, 255, 0.55);
     -fx-border-radius: 30;
-}
+}.text-field {
+     -fx-letter-spacing: 10vh;
+    -fx-spacing: 10vh;
+ }

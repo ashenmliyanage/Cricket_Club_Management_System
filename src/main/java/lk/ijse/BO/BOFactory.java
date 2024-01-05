@@ -11,7 +11,7 @@ public class BOFactory {
     }
 
     public enum BOType{
-        Login,CreateAccount,Dashboard,Member,Stock,Book,Setting
+        Login,CreateAccount,Dashboard,Member,Stock,Book,Setting,Forget
     }
     public SuperBO getBO(BOType boType){
         switch (boType){
@@ -29,6 +29,8 @@ public class BOFactory {
                 return new BookBoImpl();
             case Setting:
                 return new SettingBoImpl();
+            case Forget:
+                return new ForgetPasswordBoImpl();
             default:
                 return null;
         }
