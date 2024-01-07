@@ -13,4 +13,5 @@ public interface MemberDao extends CrudUtil<Member> {
 
     ArrayList<String> getAllName() throws SQLException, ClassNotFoundException;
 
+    ArrayList<Member> geMemberAll() throws SQLException, ClassNotFoundException;
 }

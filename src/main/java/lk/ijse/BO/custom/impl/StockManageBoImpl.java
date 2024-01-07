@@ -5,8 +5,10 @@ import lk.ijse.Dao.Custom.MemberDao;
 import lk.ijse.Dao.Custom.impl.MemberDaoImpl;
 import lk.ijse.Dao.Custom.StockDao;
 import lk.ijse.Dao.Custom.impl.StockDaoImpl;
+import lk.ijse.Dao.DAOFactory;
 import lk.ijse.Model.MemberDto;
 import lk.ijse.Model.StockDto;
+import lk.ijse.entity.Member;
 import lk.ijse.entity.Stock;
 import lk.ijse.util.SQLUtil;
 
@@ -15,9 +17,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class StockManageBoImpl implements StockManageBo {
-    StockDao stockDao = new StockDaoImpl();
+    StockDao stockDao = (StockDao) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOType.Stock);
 
-    MemberDao memberDao = new MemberDaoImpl();
+    MemberDao memberDao = (MemberDao) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOType.Member);
 
     @Override
     public boolean Save(StockDto dto) throws SQLException, ClassNotFoundException {
@@ -84,22 +86,26 @@ public class StockManageBoImpl implements StockManageBo {
 
     @Override
     public ArrayList<MemberDto> geMembertAll() throws SQLException, ClassNotFoundException {
-        ResultSet resultSet = SQLUtil.execute("SELECT * FROM member");
-        ArrayList<MemberDto> dtos = new ArrayList<>();
+        ArrayList<Member> members = memberDao.geMemberAll();
 
-        while (resultSet.next()){
-            dtos.add(new MemberDto(
-                    resultSet.getString(1),
-                    resultSet.getString(2),
-                    resultSet.getString(3),
-                    resultSet.getString(4),
-                    resultSet.getInt(5),
-                    resultSet.getString(6),
-                    resultSet.getString(7),
-                    resultSet.getBinaryStream(8)
-            ));
+        ArrayList<MemberDto> memberDtos = new ArrayList<>();
+
+        for (Member member : members){
+            memberDtos.add(
+                    new MemberDto(
+                            member.getMember_id(),
+                            member.getFull_name(),
+                            member.getPosition(),
+                            member.getBod(),
+                            member.getAge(),
+                            member.getEmail(),
+                            member.getAddress(),
+                            member.getImage()
+                    )
+            );
         }
-        return dtos;
+
+        return memberDtos;
     }
 
 }

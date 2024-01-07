@@ -124,5 +124,26 @@ public class MemberDaoImpl implements MemberDao{
         return array;
     }
 
+    @Override
+    public ArrayList<Member> geMemberAll() throws SQLException, ClassNotFoundException {
+
+        ResultSet resultSet = SQLUtil.execute("SELECT * FROM member");
+        ArrayList<Member> dtos = new ArrayList<>();
+
+        while (resultSet.next()){
+            dtos.add(new Member(
+                    resultSet.getString(1),
+                    resultSet.getString(2),
+                    resultSet.getString(3),
+                    resultSet.getString(4),
+                    resultSet.getInt(5),
+                    resultSet.getString(6),
+                    resultSet.getString(7),
+                    resultSet.getBinaryStream(8)
+            ));
+        }
+        return dtos;
+    }
+
 
 }
