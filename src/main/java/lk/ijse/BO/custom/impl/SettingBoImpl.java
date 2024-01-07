@@ -3,13 +3,14 @@ package lk.ijse.BO.custom.impl;
 import lk.ijse.BO.custom.SettingBo;
 import lk.ijse.Dao.Custom.UserDao;
 import lk.ijse.Dao.Custom.impl.UserDaoImpl;
+import lk.ijse.Dao.DAOFactory;
 import lk.ijse.Model.UserDto;
 import lk.ijse.entity.User;
 
 import java.sql.SQLException;
 
 public class SettingBoImpl implements SettingBo {
-    UserDao userDao = new UserDaoImpl();
+    UserDao userDao = (UserDao) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOType.User);
 
     @Override
     public boolean update(UserDto dto) throws SQLException, ClassNotFoundException {
