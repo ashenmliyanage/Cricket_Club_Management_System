@@ -3,6 +3,7 @@ package lk.ijse.BO.custom.impl;
 import lk.ijse.BO.custom.MemberBo;
 import lk.ijse.Dao.Custom.MemberDao;
 import lk.ijse.Dao.Custom.impl.MemberDaoImpl;
+import lk.ijse.Dao.DAOFactory;
 import lk.ijse.Model.MemberDto;
 import lk.ijse.entity.Member;
 
@@ -11,7 +12,7 @@ import java.util.ArrayList;
 
 public class MemberBoImpl implements MemberBo {
 
-    MemberDao memberDao = new MemberDaoImpl();
+    MemberDao memberDao = (MemberDao) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOType.Member);
     @Override
     public ArrayList<MemberDto> getAll() throws SQLException, ClassNotFoundException {
         ArrayList<Member> data = memberDao.getAll();
