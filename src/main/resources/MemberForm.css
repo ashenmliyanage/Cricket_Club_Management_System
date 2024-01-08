@@ -182,3 +182,16 @@
     -fx-line-height: 1.0; /* Use an appropriate value for your specific case */
     -fx-alignment: center;
 }
+.report{
+    -fx-min-width: 61px;
+    -fx-max-width: 61px;
+    -fx-min-height: 49px;
+    -fx-max-height: 49px;
+    -fx-shape: "M 14 0 L 47 0 C 57.732 0 66 8.268 66 19 L 66 30 C 66 40.732 57.732 50 47 50 L 19 50 C 8.268 50 0 40.732 0 30 L 0 19 C 0 8.268 8.268 0 19 0 L 14 0 Z";
+    -fx-border-width: 1;
+    -fx-border-color: rgba(0, 0, 0, 0.20);
+    -fx-background-color: #1A4BCC;
+    -fx-background-insets: 0;
+    -fx-border-radius: 14px;
+    -fx-effect: innershadow(gaussian, rgba(0, 0, 0, 0.50), 0, 0, 0, 0);
+}

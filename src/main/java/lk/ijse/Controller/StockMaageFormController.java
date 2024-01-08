@@ -102,7 +102,7 @@ public class StockMaageFormController {
                     }
                 }
             } catch (SQLException e) {
-                throw new RuntimeException(e);
+
             } catch (ClassNotFoundException e) {
                 throw new RuntimeException(e);
             } catch (IOException e) {
