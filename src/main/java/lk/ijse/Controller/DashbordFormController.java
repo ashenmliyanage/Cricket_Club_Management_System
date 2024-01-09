@@ -124,6 +124,8 @@ public class DashbordFormController implements Initializable {
         generateRealTime();
         getLastSixMembers();
         getItemCount();
+        LoadChart();
+
 
 //        root.setMaxWidth(698);
 //        root.setMaxHeight(465);
@@ -131,13 +133,13 @@ public class DashbordFormController implements Initializable {
 //        ChangeImage.setFitWidth(698);
 //        initializeImageSlideshow();
 
-        XYChart.Series series = new XYChart.Series();
-        series.getData().add(new XYChart.Data("10", 7));
-        series.getData().add(new XYChart.Data("20", 5));
-        series.getData().add(new XYChart.Data("30", 9));
-        series.getData().add(new XYChart.Data("40", 6));
-        series.getData().add(new XYChart.Data("50", 4));
-        Chart.getData().add(series);
+//        XYChart.Series series = new XYChart.Series();
+//        series.getData().add(new XYChart.Data("10", 7));
+//        series.getData().add(new XYChart.Data("20", 5));
+//        series.getData().add(new XYChart.Data("30", 9));
+//        series.getData().add(new XYChart.Data("40", 6));
+//        series.getData().add(new XYChart.Data("50", 4));
+//        Chart.getData().add(series);
         Chart.lookup(".chart-plot-background").setStyle("-fx-background-color:rgba(0,0,0,0)");
     }
 
@@ -269,5 +271,21 @@ public class DashbordFormController implements Initializable {
                     break;
             }
         }
+    }
+
+    void LoadChart() throws SQLException, ClassNotFoundException {
+        ArrayList<Integer> chartData = dashboardBo.getChartData();
+        XYChart.Series series = new XYChart.Series<>();
+
+        for (int i = 0; i < 10; i++) {
+            String index = ""+i;
+            try {
+                series.getData().add(new XYChart.Data(index,chartData.get(i)));
+                System.out.println(chartData.get(i));
+            } catch (Exception e) {
+                break;
+            }
+        }
+        Chart.getData().add(series);
     }
 }

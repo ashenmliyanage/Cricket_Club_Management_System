@@ -10,4 +10,6 @@ public interface DashboardBo extends SuperBO {
     ArrayList<MemberDto> getSixData() throws SQLException, ClassNotFoundException;
 
     int[] getCount() throws SQLException, ClassNotFoundException;
+
+    ArrayList<Integer> getChartData() throws SQLException, ClassNotFoundException;
 }
