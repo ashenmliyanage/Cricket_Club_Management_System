@@ -16,7 +16,11 @@ import lk.ijse.BO.custom.impl.MemberBoImpl;
 import lk.ijse.Model.MemberDto;
 import lk.ijse.util.ImageAutoCrop;
 import lk.ijse.util.Validation;
-
+import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.engine.design.JRDesignQuery;
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
+import net.sf.jasperreports.view.JasperViewer;
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.*;
@@ -176,5 +180,14 @@ public class UpdatememberFormController {
     }
 
     public void reportbtnOnActhion(ActionEvent actionEvent) {
+        try {
+            memberDao.getReport(memberId);
+        } catch (JRException e) {
+            throw new RuntimeException(e);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

@@ -1,8 +1,12 @@
 package lk.ijse.Dao.Custom.impl;
 
 import lk.ijse.Dao.Custom.MemberDao;
+import lk.ijse.db.DBConnection;
 import lk.ijse.entity.Member;
 import lk.ijse.util.SQLUtil;
+import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.view.JasperViewer;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -143,6 +147,13 @@ public class MemberDaoImpl implements MemberDao{
             ));
         }
         return dtos;
+    }
+
+    @Override
+    public void getReport(JasperDesign load) throws JRException, SQLException, ClassNotFoundException {
+        JasperReport jasperReport = JasperCompileManager.compileReport(load);
+        JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport,null, DBConnection.getDbConnection().getConnection());
+        JasperViewer.viewReport(jasperPrint,false);
     }
 
 

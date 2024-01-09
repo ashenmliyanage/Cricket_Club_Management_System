@@ -2,11 +2,15 @@ package lk.ijse.BO.custom.impl;
 
 import lk.ijse.BO.custom.MemberBo;
 import lk.ijse.Dao.Custom.MemberDao;
-import lk.ijse.Dao.Custom.impl.MemberDaoImpl;
 import lk.ijse.Dao.DAOFactory;
 import lk.ijse.Model.MemberDto;
 import lk.ijse.entity.Member;
+import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.engine.design.JRDesignQuery;
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
 
+import java.io.InputStream;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -95,5 +99,14 @@ public class MemberBoImpl implements MemberBo {
     @Override
     public boolean Delete(String name) throws SQLException, ClassNotFoundException {
         return memberDao.Delete(name);
+    }
+    @Override
+    public void getReport(String Id) throws JRException, SQLException, ClassNotFoundException {
+        InputStream resourceAsStream = getClass().getResourceAsStream("/Report/Member_Report.jrxml");
+        JasperDesign load = JRXmlLoader.load(resourceAsStream);
+        JRDesignQuery jrDesignQuery = new JRDesignQuery();
+        jrDesignQuery.setText("SELECT * FROM member WHERE Member_ID = "+"\""+Id+"\"");
+        load.setQuery(jrDesignQuery);
+        memberDao.getReport(load);
     }
 }

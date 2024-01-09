@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.6.final using JasperReports Library version 6.20.6-5c96b6aa8a39ac1dc6b6bea4b81168e16dd39231  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_A4_1" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b4338681-3e6f-4389-9a6c-8137df3d80bd">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter (4)"/>
+	<queryString language="SQL">
+		<![CDATA[select * from member where Member_ID = "M01";]]>
+	</queryString>
+	<field name="Member_ID" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Member_ID"/>
+		<property name="com.jaspersoft.studio.field.label" value="Member_ID"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="member"/>
+	</field>
+	<field name="Full_Name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Full_Name"/>
+		<property name="com.jaspersoft.studio.field.label" value="Full_Name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="member"/>
+	</field>
+	<field name="Position" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Position"/>
+		<property name="com.jaspersoft.studio.field.label" value="Position"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="member"/>
+	</field>
+	<field name="bod" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="bod"/>
+		<property name="com.jaspersoft.studio.field.label" value="bod"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="member"/>
+	</field>
+	<field name="Age" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="Age"/>
+		<property name="com.jaspersoft.studio.field.label" value="Age"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="member"/>
+	</field>
+	<field name="Email" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Email"/>
+		<property name="com.jaspersoft.studio.field.label" value="Email"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="member"/>
+	</field>
+	<field name="Address" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Address"/>
+		<property name="com.jaspersoft.studio.field.label" value="Address"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="member"/>
+	</field>
+	<field name="Image" class="byte[]">
+		<property name="com.jaspersoft.studio.field.name" value="Image"/>
+		<property name="com.jaspersoft.studio.field.label" value="Image"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="member"/>
+	</field>
+	<group name="Member_ID">
+		<groupExpression><![CDATA[$F{Member_ID}]]></groupExpression>
+	</group>
+	<group name="Full_Name">
+		<groupExpression><![CDATA[$F{Full_Name}]]></groupExpression>
+	</group>
+	<group name="Position">
+		<groupExpression><![CDATA[$F{Position}]]></groupExpression>
+	</group>
+	<group name="bod">
+		<groupExpression><![CDATA[$F{bod}]]></groupExpression>
+	</group>
+	<group name="Age">
+		<groupExpression><![CDATA[$F{Age}]]></groupExpression>
+	</group>
+	<group name="Email">
+		<groupExpression><![CDATA[$F{Email}]]></groupExpression>
+	</group>
+	<group name="Address">
+		<groupExpression><![CDATA[$F{Address}]]></groupExpression>
+	</group>
+	<group name="Image">
+		<groupExpression><![CDATA[$F{Image}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="802" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="560" height="802" uuid="a7792719-9eb8-4faa-938d-d8364815643e"/>
+				<imageExpression><![CDATA["C:/Users/AshenMadhushanka/Downloads/A4 - 1 (1).png"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="148" y="207" width="340" height="30" uuid="33c36490-9694-4dc7-8a49-d9075b99fc41"/>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Full_Name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="153" y="260" width="380" height="30" uuid="836b3e1d-d491-4676-9c68-f90444efad8f"/>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Position}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="157" y="318" width="370" height="30" uuid="7b086749-bd41-4493-a157-b55b3536cefe"/>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{bod}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="152" y="373" width="390" height="30" uuid="329d91a3-20cd-4e17-b75a-4966b265f310"/>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Age}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="161" y="430" width="380" height="30" uuid="936cc03e-a4ca-4a2c-a522-5c87f1f1cc91"/>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Email}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="150" y="495" width="374" height="30" uuid="8c74edc9-4cdd-40db-a1da-c83cf738e603"/>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Address}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
